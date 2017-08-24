@@ -1,3 +1,12 @@
+# Simba Education Open Source Learning Management System
+
+Inspired to change the lives of children across the globe, Simba Education have taken on the challenge to find a solution to bring education to Zimbabwe and South Africa. 
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+
 Yii 2 Advanced Project Template
 ===============================
 
