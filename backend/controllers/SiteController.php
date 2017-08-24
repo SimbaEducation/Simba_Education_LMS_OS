@@ -1,0 +1,183 @@
+<?php
+/**
+ *  Site
+ */
+namespace backend\controllers;
+
+use Yii;
+use yii\filters\AccessControl;
+use yii\web\Controller;
+use yii\filters\VerbFilter;
+use common\models\LoginForm;
+use common\models\PasswordResetRequestForm;
+use common\models\User;
+use common\models\ResetPasswordForm;
+use backend\components\BackEndController;
+use yii\web\NotFoundHttpException;
+use yii\base\ErrorException;
+
+/**
+ * Site controller
+ */
+class SiteController extends BackEndController {
+
+    public $defaultAction = 'login';
+    public $layout = 'admin_main';
+
+    /**
+     * @inheritdoc
+     */
+//    public function behaviors() {
+//        return [
+//            'verbs' => [
+//                'class' => VerbFilter::className(),
+//                'actions' => [
+//                    'delete' => ['post'],
+//                ],
+//            ],
+//            'access' => [
+//                'class' => \yii\filters\AccessControl::className(),
+//                'only' =>
+//                [
+//                    'index','logout',
+//                ],
+//                'rules' => [
+//                    // allow authenticated users
+//                    [
+//                        'actions' => ['login', 'error', 'reset-password'],
+//                        'allow' => true,
+//                    ],
+//                    
+//                    [
+//                        'allow' => true,
+//                        //'roles' => ['@'],
+//                        'matchCallback' => function() {
+//                            if (!Yii::$app->user->isGuest) {
+//                                if (Yii::$app->user->identity->user_type == 1) {
+//                                    return true;
+//                                } else {
+//                                    return $this->redirect(Yii::$app->urlManager->createUrl('site/logout'), 302);
+//                                }
+//                            } else {
+//                                return false;
+//                            }
+//                        }
+//                    ],
+//                // everything else is denied
+//                ],
+//            ],
+//        ];
+//    }
+
+    public function behaviors() {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 'error', 'reset-password'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => ['logout', 'index'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+                //'verbs' => [
+                //    'class' => VerbFilter::className(),
+                //    'actions' => [
+                //        'logout' => ['post'],
+                //    ],
+                //],
+        ];
+    }
+
+    public function actionIndex() {
+        $this->layout = 'admin_main';
+        $this->pageHeading = 'Dashboard';
+        $this->pageDescription = 'statistics &amp; reports';
+        return $this->render('index');
+    }
+
+    public function actionLogin() {
+        $this->layout = 'login_main';
+
+        $check = 0;
+        if (!\Yii::$app->user->isGuest)
+            return $this->redirect(['index']);
+
+        $model = new LoginForm();
+        $modelForgot = new PasswordResetRequestForm();
+
+        if (isset($_POST['PasswordResetRequestForm'])) {
+            $check = 1;
+            if ($modelForgot->load(Yii::$app->request->post()) && $modelForgot->validate()) {
+
+                if ($modelForgot->userExist()) {
+                    if ($this->sendEmail('forgot', array('to' => $modelForgot->email)))
+                        Yii::$app->getSession()->setFlash('success', 'Check your email for further instructions.');
+                    else
+                        Yii::$app->getSession()->setFlash('error', 'Sorry, we are unable to process your request cause of system failure please try again later.');
+                } else {
+                    Yii::$app->getSession()->setFlash('error', 'Sorry, we are unable to reset password for email provided.');
+                }
+            } else {
+                $errMsg = '';
+                foreach ($modelForgot->getErrors() as $row) {
+                    $errMsg .= $row[0] . '<br>';
+                }
+                //Yii::$app->getSession()->setFlash('error', 'Sorry, we are unable to reset password for email provided.');
+                Yii::$app->getSession()->setFlash('error', $errMsg);
+            }
+        }
+
+        if ($model->load(Yii::$app->request->post()) && $model->login())
+            return $this->goHome();
+        else
+            return $this->render('login', ['model' => $model, 'modelForgot' => $modelForgot, 'check' => $check]);
+    }
+
+    public function actionResetPassword($token) {
+        $this->layout = 'login_main';
+        try {
+            $model = new ResetPasswordForm($token);
+        } catch (InvalidParamException $e) {
+            throw new BadRequestHttpException($e->getMessage());
+        }
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
+            Yii::$app->session->setFlash('success', 'New password saved successfully.');
+        } else {
+            $errMsg = '';
+            foreach ($model->getErrors() as $row) {
+                $errMsg .= $row[0] . '<br>';
+            }
+            Yii::$app->getSession()->setFlash('error', $errMsg);
+        }
+
+        return $this->render('resetPassword', [
+                    'model' => $model,
+        ]);
+    }
+
+    public function actionLogout() {
+        Yii::$app->user->logout();
+        return $this->goHome();
+    }
+
+    public function actionError() {
+        $this->layout = 'error_main';
+
+        if (!Yii::$app->user->isGuest)
+            $this->layout = 'admin_main';
+
+        $exception = Yii::$app->errorHandler->exception;
+
+        if ($exception !== null) {
+            return $this->render('error', ['exception' => $exception]);
+        }
+    }
+
+}

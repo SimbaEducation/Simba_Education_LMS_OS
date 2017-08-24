@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/backend.html">\backend</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">429</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-917354270"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-917354270" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1259343925"></a>
+                                <a href="../namespaces/backend.html" style="margin-left: 30px; padding-left: 0">backend</a>
+            </div>
+            <div id="namespace-1259343925" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1086298462"></a>
+                                <a href="../namespaces/backend.components.html" style="margin-left: 30px; padding-left: 0">components</a>
+            </div>
+            <div id="namespace-1086298462" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/backend.components.BackEndController.html">BackEndController</a></li>
+                                                    <li class="class"><a href="../classes/backend.components.SettingsComponent.html">SettingsComponent</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1873247502"></a>
+                                <a href="../namespaces/backend.controllers.html" style="margin-left: 30px; padding-left: 0">controllers</a>
+            </div>
+            <div id="namespace-1873247502" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/backend.controllers.ActivitiesController.html">ActivitiesController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.ActivityCategoriesController.html">ActivityCategoriesController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.ActivityQuestionController.html">ActivityQuestionController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.CategoryController.html">CategoryController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.CyclesController.html">CyclesController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.CycleTemplatesController.html">CycleTemplatesController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.DomainOfSubjectController.html">DomainOfSubjectController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.NewsController.html">NewsController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.PostController.html">PostController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.PreferencesController.html">PreferencesController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.SchoolController.html">SchoolController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.SegmentController.html">SegmentController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.SettingsController.html">SettingsController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.SiteController.html">SiteController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.StandardsController.html">StandardsController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.SubjectsController.html">SubjectsController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.SubSubjectsController.html">SubSubjectsController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.TypesOfCyclesController.html">TypesOfCyclesController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.UserController.html">UserController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.UserSchoolController.html">UserSchoolController</a></li>
+                                                    <li class="class"><a href="../classes/backend.controllers.UserTypeController.html">UserTypeController</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1529998577"></a>
+                                <a href="../namespaces/backend.models.html" style="margin-left: 30px; padding-left: 0">models</a>
+            </div>
+            <div id="namespace-1529998577" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/backend.models.Activities.html">Activities</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.ActivitiesSearch.html">ActivitiesSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.ActivityCategories.html">ActivityCategories</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.ActivityCategoriesSearch.html">ActivityCategoriesSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.ActivityGallery.html">ActivityGallery</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.ActivityInstruction.html">ActivityInstruction</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.ActivityQuestion.html">ActivityQuestion</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.ActivityQuestionList.html">ActivityQuestionList</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.ActivityQuestionSearch.html">ActivityQuestionSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.Category.html">Category</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.CategorySearch.html">CategorySearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.CycleGallery.html">CycleGallery</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.Cycles.html">Cycles</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.CycleSelectedActivity.html">CycleSelectedActivity</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.CycleSelectedActivityPerDay.html">CycleSelectedActivityPerDay</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.CyclesSearch.html">CyclesSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.CycleTemplateDays.html">CycleTemplateDays</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.CycleTemplateDaysCategories.html">CycleTemplateDaysCategories</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.CycleTemplates.html">CycleTemplates</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.CycleTemplatesSearch.html">CycleTemplatesSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.DomainOfSubject.html">DomainOfSubject</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.DomainOfSubjectSearch.html">DomainOfSubjectSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.News.html">News</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.NewsSearch.html">NewsSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.NewsType.html">NewsType</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.Post.html">Post</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.PostSearch.html">PostSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.PostType.html">PostType</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.school.html">school</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.SchoolSearch.html">SchoolSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.segment.html">segment</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.SegmentSearch.html">SegmentSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.Settings.html">Settings</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.SettingsSearch.html">SettingsSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.Standards.html">Standards</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.StandardsSearch.html">StandardsSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.SubjectRequisites.html">SubjectRequisites</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.Subjects.html">Subjects</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.SubjectsSearch.html">SubjectsSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.SubSubjects.html">SubSubjects</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.SubSubjectsSearch.html">SubSubjectsSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.TypesOfCycles.html">TypesOfCycles</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.TypesOfCyclesSearch.html">TypesOfCyclesSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.User.html">User</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.UserSchool.html">UserSchool</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.UserSchoolSearch.html">UserSchoolSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.UserSearch.html">UserSearch</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.UserType.html">UserType</a></li>
+                                                    <li class="class"><a href="../classes/backend.models.UserTypeSearch.html">UserTypeSearch</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content namespace">
+                    <nav>
+                                                <a href="../namespaces/backend.html">\backend</a>
+                                            </nav>
+                    <h1><small>\backend</small>models</h1>
+
+                    
+                    
+                    
+                                        <h2>Classes</h2>
+                    <table class="table table-hover">
+                                            <tr>
+                            <td><a href="../classes/backend.models.Activities.html">Activities</a></td>
+                            <td><em>This is the model class for table &quot;activities&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.ActivitiesSearch.html">ActivitiesSearch</a></td>
+                            <td><em>ActivitiesSearch represents the model behind the search form about `backend\models\Activities`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.ActivityCategories.html">ActivityCategories</a></td>
+                            <td><em>This is the model class for table &quot;activity_categories&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.ActivityCategoriesSearch.html">ActivityCategoriesSearch</a></td>
+                            <td><em>ActivityCategoriesSearch represents the model behind the search form about `backend\models\ActivityCategories`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.ActivityGallery.html">ActivityGallery</a></td>
+                            <td><em>This is the model class for table &quot;activity_gallery&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.ActivityInstruction.html">ActivityInstruction</a></td>
+                            <td><em>This is the model class for table &quot;activity_instruction&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.ActivityQuestion.html">ActivityQuestion</a></td>
+                            <td><em>This is the model class for table &quot;activity_question&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.ActivityQuestionList.html">ActivityQuestionList</a></td>
+                            <td><em>This is the model class for table &quot;activity_question_list&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.ActivityQuestionSearch.html">ActivityQuestionSearch</a></td>
+                            <td><em>ActivityQuestionSearch represents the model behind the search form about `backend\models\ActivityQuestion`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.Category.html">Category</a></td>
+                            <td><em>This is the model class for table &quot;category&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.CategorySearch.html">CategorySearch</a></td>
+                            <td><em>CategorySearch represents the model behind the search form about `backend\models\Category`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.CycleGallery.html">CycleGallery</a></td>
+                            <td><em>This is the model class for table &quot;cycle_gallery&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.Cycles.html">Cycles</a></td>
+                            <td><em>This is the model class for table &quot;cycles&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.CycleSelectedActivity.html">CycleSelectedActivity</a></td>
+                            <td><em>This is the model class for table &quot;cycle_selected_activity&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.CycleSelectedActivityPerDay.html">CycleSelectedActivityPerDay</a></td>
+                            <td><em>This is the model class for table &quot;cycle_selected_activity_per_day&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.CyclesSearch.html">CyclesSearch</a></td>
+                            <td><em>CyclesSearch represents the model behind the search form about `backend\models\Cycles`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.CycleTemplateDays.html">CycleTemplateDays</a></td>
+                            <td><em>This is the model class for table &quot;cycle_template_days&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.CycleTemplateDaysCategories.html">CycleTemplateDaysCategories</a></td>
+                            <td><em>This is the model class for table &quot;cycle_template_days_categories&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.CycleTemplates.html">CycleTemplates</a></td>
+                            <td><em>This is the model class for table &quot;cycle_templates&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.CycleTemplatesSearch.html">CycleTemplatesSearch</a></td>
+                            <td><em>CycleTemplatesSearch represents the model behind the search form about `backend\models\CycleTemplates`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.DomainOfSubject.html">DomainOfSubject</a></td>
+                            <td><em>This is the model class for table &quot;domain_of_subject&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.DomainOfSubjectSearch.html">DomainOfSubjectSearch</a></td>
+                            <td><em>DomainOfSubjectSearch represents the model behind the search form about `backend\models\DomainOfSubject`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.News.html">News</a></td>
+                            <td><em>This is the model class for table &quot;news&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.NewsSearch.html">NewsSearch</a></td>
+                            <td><em>NewsSearch represents the model behind the search form about `backend\models\News`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.NewsType.html">NewsType</a></td>
+                            <td><em>This is the model class for table &quot;news_type&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.Post.html">Post</a></td>
+                            <td><em>This is the model class for table &quot;post&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.PostSearch.html">PostSearch</a></td>
+                            <td><em>PostSearch represents the model behind the search form about `backend\models\Post`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.PostType.html">PostType</a></td>
+                            <td><em>This is the model class for table &quot;post_type&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.school.html">school</a></td>
+                            <td><em>This is the model class for table &quot;school&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.SchoolSearch.html">SchoolSearch</a></td>
+                            <td><em>SchoolSearch represents the model behind the search form about `backend\models\School`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.segment.html">segment</a></td>
+                            <td><em>This is the model class for table &quot;segment&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.SegmentSearch.html">SegmentSearch</a></td>
+                            <td><em>SegmentSearch represents the model behind the search form about `backend\models\Segment`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.Settings.html">Settings</a></td>
+                            <td><em>This is the base model class for table &quot;settings&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.SettingsSearch.html">SettingsSearch</a></td>
+                            <td><em>SettingsSearch represents the model behind the search form about `\backend\models\Settings`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.Standards.html">Standards</a></td>
+                            <td><em>This is the model class for table &quot;standards&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.StandardsSearch.html">StandardsSearch</a></td>
+                            <td><em>StandardsSearch represents the model behind the search form about `backend\models\Standards`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.SubjectRequisites.html">SubjectRequisites</a></td>
+                            <td><em>This is the model class for table &quot;subject_requisites&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.Subjects.html">Subjects</a></td>
+                            <td><em>This is the model class for table &quot;subjects&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.SubjectsSearch.html">SubjectsSearch</a></td>
+                            <td><em>SubjectsSearch represents the model behind the search form about `backend\models\Subjects`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.SubSubjects.html">SubSubjects</a></td>
+                            <td><em>This is the model class for table &quot;sub_subjects&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.SubSubjectsSearch.html">SubSubjectsSearch</a></td>
+                            <td><em>SubSubjectsSearch represents the model behind the search form about `backend\models\SubSubjects`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.TypesOfCycles.html">TypesOfCycles</a></td>
+                            <td><em>This is the model class for table &quot;types_of_cycles&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.TypesOfCyclesSearch.html">TypesOfCyclesSearch</a></td>
+                            <td><em>TypesOfCyclesSearch represents the model behind the search form about `backend\models\TypesOfCycles`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.User.html">User</a></td>
+                            <td><em>This is the model class for table &quot;user&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.UserSchool.html">UserSchool</a></td>
+                            <td><em>This is the model class for table &quot;user_school&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.UserSchoolSearch.html">UserSchoolSearch</a></td>
+                            <td><em>UserSchoolSearch represents the model behind the search form about `backend\models\UserSchool`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.UserSearch.html">UserSearch</a></td>
+                            <td><em>UserSearch represents the model behind the search form about `backend\models\User`.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.UserType.html">UserType</a></td>
+                            <td><em>This is the base model class for table &quot;tbl_user_type&quot;.</em></td>
+                        </tr>
+                                            <tr>
+                            <td><a href="../classes/backend.models.UserTypeSearch.html">UserTypeSearch</a></td>
+                            <td><em>UserTypeSearch represents the model behind the search form about `common\models\UserType`.</em></td>
+                        </tr>
+                                        </table>
+                                    </div>
+
+                <aside class="span4 detailsbar">
+                    <dl>
+                        <dt>Namespace hierarchy</dt>
+                        <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                                                                                                                            
+                                    <div class="namespace-wrapper"><a href="../namespaces/default.html">\</a></div>
+                                                            
+                                    <div class="namespace-wrapper"><a href="../namespaces/backend.html">\backend</a></div>
+                                                                                        <div class="namespace-wrapper">\backend\models</div>
+                        </dd>
+                    </dl>
+                </aside>
+            </div>
+
+            
+            
+        </div>
+    </section>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/backend.html">\backend</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on January 26th, 2016 at 15:21.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

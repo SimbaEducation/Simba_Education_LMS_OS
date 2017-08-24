@@ -1,0 +1,122 @@
+<?php
+/**
+ *  Activites Categories
+ */
+namespace backend\controllers;
+
+use Yii;
+use backend\models\ActivityCategories;
+use backend\models\ActivityCategoriesSearch;
+use backend\models\CategorySearch;
+use backend\components\BackEndController;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+
+/**
+ * ActivityCategoriesController implements the CRUD actions for ActivityCategories model.
+ */
+class ActivityCategoriesController extends BackEndController {
+
+    public $pageHeading = 'Activity Category';
+    public $layout = 'material_main';
+
+    public function behaviors() {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                //   'delete' => ['post'],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * Lists all ActivityCategories models.
+     * @return mixed
+     */
+    public function actionIndex() {
+        $searchModel = new ActivityCategoriesSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
+     * Displays a single ActivityCategories model.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionView($id) {
+        return $this->render('view', [
+                    'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new ActivityCategories model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate() {
+        $model = new ActivityCategories();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                        'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Updates an existing ActivityCategories model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionUpdate($id) {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                        'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Deletes an existing ActivityCategories model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionDelete($id) {
+        $check = $_GET['check'];
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['preferences/index', 'check' => 0]);
+    }
+
+    /**
+     * Finds the ActivityCategories model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param string $id
+     * @return ActivityCategories the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id) {
+        if (($model = ActivityCategories::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+}

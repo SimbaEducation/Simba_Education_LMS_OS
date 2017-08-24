@@ -1,0 +1,76 @@
+<?php
+/**
+ * Summary Text
+ */
+namespace backend\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "cycle_selected_activity_per_day".
+ *
+ * @property string $id
+ * @property string $cycle_id
+ * @property string $cycle_template_day_id
+ *
+ * @property CycleSelectedActivity[] $cycleSelectedActivities
+ * @property Cycles $cycle
+ * @property CycleTemplateDays $cycleTemplateDay
+ */
+class CycleSelectedActivityPerDay extends \yii\db\ActiveRecord
+{
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'cycle_selected_activity_per_day';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['cycle_id', 'cycle_template_day_id'], 'integer']
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'cycle_id' => 'Cycle ID',
+            'cycle_template_day_id' => 'Cycle Template Day ID',
+        ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCycleSelectedActivities()
+    {
+        return $this->hasMany(CycleSelectedActivity::className(), ['cycle_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCycle()
+    {
+        return $this->hasOne(Cycles::className(), ['id' => 'cycle_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCycleTemplateDay()
+    {
+        return $this->hasOne(CycleTemplateDays::className(), ['id' => 'cycle_template_day_id']);
+    }
+}
+

@@ -1,0 +1,47 @@
+<?php
+/**
+ * Summary Text
+ */
+namespace backend\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "activity_categories".
+ *
+ * @property string $id
+ * @property string $name
+ * @property string $color_code
+ */
+class ActivityCategories extends \yii\db\ActiveRecord {
+
+    /**
+     * @inheritdoc
+     */
+    public static function tableName() {
+        return 'activity_categories';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules() {
+        return [
+            [['name', 'color_code'], 'required'],
+            [['name'], 'string', 'max' => 64],
+            [['color_code'], 'string', 'max' => 20]
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels() {
+        return [
+            'id' => 'ID',
+            'name' => 'Name',
+            'color_code' => 'Color Code',
+        ];
+    }
+
+}

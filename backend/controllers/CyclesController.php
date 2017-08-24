@@ -1,0 +1,303 @@
+<?php
+/**
+ *  Cycle
+ */
+namespace backend\controllers;
+
+use Yii;
+use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
+use backend\models\Cycles;
+use backend\models\CyclesSearch;
+use backend\components\BackEndController;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+use backend\models\CycleGallery;
+use backend\models\CycleTemplates;
+use backend\models\Activities;
+use backend\models\CycleSelectedActivityPerDay;
+use backend\models\CycleSelectedActivity;
+
+/**
+ * CyclesController implements the CRUD actions for Cycles model.
+ */
+class CyclesController extends BackEndController {
+
+    public $pageHeading = 'Cycles';
+    public $layout = 'material_main';
+
+    public function behaviors() {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+//                    'delete' => ['post'],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * Lists all Cycles models.
+     * @return mixed
+     */
+    public function actionIndex() {
+        $pageSize = isset($_GET['per-page']) ? $_GET['per-page'] : 5;
+        $searchModel = new CyclesSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $pageSize);
+
+        return $this->render('index', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                    'pageSize' => $pageSize
+        ]);
+    }
+
+    /**
+     * Displays a single Cycles model.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionView($id) {
+        return $this->render('view', [
+                    'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new Cycles model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate() {
+        $model = new Cycles();
+
+        if ($model->load(Yii::$app->request->post())) {
+
+            // Picture 
+            $model->thumbnail = UploadedFile::getInstance($model, 'thumbnail');
+            $unique = $model->thumbnail->baseName . '-' . uniqid() . '.' . $model->thumbnail->extension;
+            if (!file_exists(\Yii::$app->basePath . '/../uploads/cycles/')) {
+                mkdir(\Yii::$app->basePath . '/../uploads/cycles/', 0777, true);
+            }
+            $model->thumbnail->saveAs(\Yii::$app->basePath . '/../uploads/cycles/' . $unique);
+            $model->thumbnail = $unique;
+
+            $age = explode(';', $_POST['Cycles']['age_start']);
+            $model->age_start = $age[0];
+            $model->age_end = $age[1];
+            $model->created_by = yii::$app->user->id;
+            $model->save(false);
+
+            $gallery = \Yii::$app->session['cyclesgallery'];
+            if (!empty($gallery)) {
+                foreach ($gallery as $attachment) {
+                    $subjectRequusties = new CycleGallery();
+                    $subjectRequusties->cycle_id = $model->id;
+                    $subjectRequusties->picture = $attachment;
+                    $subjectRequusties->save(false);
+                }
+            }
+            \Yii::$app->session->remove('cyclesgallery');
+
+            $cycleTemplate = CycleTemplates::findOne($model->cycle_template_id);
+
+            foreach ($cycleTemplate->cycleTemplateDays AS $val) {
+                foreach ($val->cycleTemplateDaysCategories AS $cat) {
+                    $cycleSelectedActivity = new CycleSelectedActivity();
+                    $cycleSelectedActivity->activity_id = $_POST['cycle_template_' . $cat->id . '_' . $cat->activity_category_id];
+                    $cycleSelectedActivity->cycle_template_day_id = $val->id;
+                    $cycleSelectedActivity->category_id = $cat->activity_category_id;
+                    $cycleSelectedActivity->cycle_id = $model->id;
+                    $cycleSelectedActivity->cycle_template_categories_day_id = $cat->id;
+                    $cycleSelectedActivity->save(false);
+                }
+            }
+
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            \Yii::$app->session->remove('cyclesgallery');
+            return $this->render('create', [
+                        'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Updates an existing Cycles model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionUpdate($id) {
+        $model = $this->findModel($id);
+        if ($model->load(Yii::$app->request->post())) {
+
+            // Thumbnail
+            if (isset($_FILES['Cycles']['name']['thumbnailupdate']) && !empty($_FILES['Cycles']['name']['thumbnailupdate'])) {
+                $model->thumbnail = UploadedFile::getInstance($model, 'thumbnailupdate');
+                $unique = $model->thumbnail->baseName . '-' . uniqid() . '.' . $model->thumbnail->extension;
+                if (!file_exists(\Yii::$app->basePath . '/../uploads/cycles/')) {
+                    mkdir(\Yii::$app->basePath . '/../uploads/cycles/', 0777, true);
+                }
+                $model->thumbnail->saveAs(\Yii::$app->basePath . '/../uploads/cycles/' . $unique);
+                $model->thumbnail = $unique;
+            }
+            $age = explode(';', $_POST['Cycles']['age_start']);
+            $model->age_start = $age[0];
+            $model->age_end = $age[1];
+            $model->update_date = date('Y:m:d');
+            $model->save(false);
+            $gallery = \Yii::$app->session['cyclesgallery'];
+            if (!empty($gallery)) {
+                foreach ($gallery as $attachment) {
+                    $subjectRequusties = new CycleGallery();
+                    $subjectRequusties->cycle_id = $model->id;
+                    $subjectRequusties->picture = $attachment;
+                    $subjectRequusties->save(false);
+                }
+            }
+            \Yii::$app->session->remove('cyclesgallery');
+            CycleSelectedActivity::deleteAll(['cycle_id' => $model->id]);
+            $cycleTemplate = CycleTemplates::findOne($model->cycle_template_id);
+            foreach ($cycleTemplate->cycleTemplateDays AS $val) {
+                foreach ($val->cycleTemplateDaysCategories AS $cat) {
+                    $cycleSelectedActivity = new CycleSelectedActivity();
+                    $cycleSelectedActivity->activity_id = $_POST['cycle_template_' . $cat->id . '_' . $cat->activity_category_id];
+                    $cycleSelectedActivity->cycle_template_day_id = $val->id;
+                    $cycleSelectedActivity->category_id = $cat->activity_category_id;
+                    $cycleSelectedActivity->cycle_id = $model->id;
+                    $cycleSelectedActivity->cycle_template_categories_day_id = $cat->id;
+                    $cycleSelectedActivity->save(false);
+                }
+            }
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            \Yii::$app->session->remove('cyclesgallery');
+            return $this->render('update', [
+                        'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Deletes an existing Cycles model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionDelete($id) {
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['index']);
+    }
+
+    /**
+     * Finds the Cycles model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param string $id
+     * @return Cycles the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id) {
+        if (($model = Cycles::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    /**
+     * Cycle Gallery Image Upload
+     * @return mixed
+     */
+    public function actionImageuploads() {
+        $model = new Cycles();
+        $model->gallery = UploadedFile::getInstances($model, 'gallery');
+        if ($model->gallery) {
+            foreach ($model->gallery as $attachment) {
+                $unique = $attachment->baseName . '-' . uniqid() . '.' . $attachment->extension;
+                $attachment->saveAs(\Yii::$app->basePath . '/../uploads/gallery/' . $unique);
+                $tippIds = \Yii::$app->session['cyclesgallery'];
+                $tippIds[] = $unique;
+                \Yii::$app->session['cyclesgallery'] = $tippIds;
+            }
+        }
+        return json_encode($tippIds);
+    }
+
+    /**
+     * Cycle Image Update
+     * @param string $id
+     * @return mixed
+     */
+    public function actionImageuploadupdate($id) {
+        $model = $this->findModel($id);
+        $html = array();
+        if (!empty($model->cycleGalleries[0])) {
+            foreach ($model->cycleGalleries AS $picture) {
+                $html[] = $picture->picture;
+            }
+        }
+        $model->gallery = UploadedFile::getInstances($model, 'gallery');
+        if ($model->gallery) {
+            foreach ($model->gallery as $attachment) {
+                $unique = $attachment->baseName . '-' . uniqid() . '.' . $attachment->extension;
+                $attachment->saveAs(\Yii::$app->basePath . '/../uploads/gallery/' . $unique);
+                $tippIds = \Yii::$app->session['cyclesgallery'];
+                $tippIds[] = $unique;
+                \Yii::$app->session['cyclesgallery'] = $tippIds;
+            }
+        }
+        return json_encode(array_merge($html, $tippIds));
+    }
+
+    /**
+     * Deletes an existing Activities model.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionDeletegallery($id) {
+        $model = CycleGallery::findOne($id);
+        $gallery = \Yii::$app->session['cyclesgallery'];
+        if (!empty($gallery)) {
+            $pos = array_search($model->picture, $gallery);
+            unset($gallery[$pos]);
+            \Yii::$app->session['cyclesgallery'] = $gallery;
+        }
+        $model->delete();
+        return true;
+    }
+
+    /**
+     * Get CycleTemplate in Cycle. 
+     * @param type $id
+     */
+    public function actionGettemplate($id) {
+        $model = CycleTemplates::findOne($id);
+        $data = array(
+            'name' => $model->name,
+        );
+        foreach ($model->cycleTemplateDays AS $val) {
+            foreach ($val->cycleTemplateDaysCategories AS $cat) {
+                $categories[] = array(
+                    'categoryColor' => $cat->activityCategory->color_code,
+                    'categoryName' => $cat->activityCategory->name,
+                    'catId' => $cat->activity_category_id,
+                    'duration' => $cat->duration,
+                    'dropDown' => Html::dropDownList('cycle_template_' . $cat->id . '_' . $cat->activity_category_id, null, ArrayHelper::map(Activities::find()->where('category = ' . $cat->activity_category_id . '')->all(), 'id', 'name'), ['prompt' => 'Select Activity', 'class' => 'form-control']),
+                );
+            }
+            $data[] = array(
+                'dayName' => $val->name,
+                'dayEmphasis' => $val->emphasis,
+                'category' => $categories,
+            );
+            $categories = array();
+        }
+        echo json_encode($data);
+        exit;
+    }
+
+}

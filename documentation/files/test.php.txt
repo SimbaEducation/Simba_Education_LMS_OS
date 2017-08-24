@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> 
+<html class="ie8 no-js" lang="en-US"><![endif]-->
+<!--[if IE 9]> 
+<html class="ie9 no-js" lang="en-US"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en-US"><!--<![endif]-->
+
+    <head><meta name="csrf-param" content="_backendCsrf">
+        <meta name="csrf-token" content="RVp4UzVOejUiLkpjcSUdRwEwH2ACGBRsMyooZUwKLQ0EMhICWggyUg==">
+        <title>My Backend | Updatetemplate</title><meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Project Management CRM">
+        <meta name="author" content="Granjur Technologies">
+        <link href="/simba/backend/favicon.ico" rel="shortcut icon">
+        <link type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/802ea1f8/css/font-awesome.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/8d4cd153/css/simple-line-icons.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/e2891136/css/bootstrap.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/4d00843b/css/uniform.default.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/6d639fc5/css/bootstrap-switch.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/e3185ab9/css/bootstrap-select.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/e3185ab9/css/multi-select.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/e3185ab9/css/select2.min.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/e3185ab9/css/select2-bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" id="style_components" href="/simba/backend/assets/79440854/css/components-md.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/6e6b5c8e/css/plugins-md.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/cd2b9449/css/summernote.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/4d7bcfa7/css/bootstrap-fileinput.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/f112d0e3/css/ion.rangeSlider.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/f112d0e3/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/ac111414/css/bootstrap-select.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/ac111414/css/multi-select.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/ac111414/css/select2.min.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/ac111414/css/select2-bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" href="/simba/backend/assets/9cfa6093/css/layout.css" rel="stylesheet" position="2">
+        <link type="text/css" href="/simba/backend/assets/9cfa6093/css/light.css" rel="stylesheet" position="2">
+        <link type="text/css" href="/simba/backend/assets/9cfa6093/css/custom.css" rel="stylesheet" position="2">
+        <link href="/simba/backend/assets/51aed39a/css/sidenav.css" rel="stylesheet">
+        <link href="/simba/backend/assets/6ea04b0/toolbar.css" rel="stylesheet">
+        <script type="text/javascript" src="/simba/backend/assets/d838b1a3/js/jquery.min.js" language="javascript"></script></head><body class="page-md page-header-fixed page-sidebar-closed-hide-logo"><!-- BEGIN HEADER -->
+        <div class="page-header md-shadow-z-1-i navbar navbar-fixed-top">
+            <select data-show-subtext="true" class="bs-select form-control" tabindex="-98">
+                <option data-content="Mustard &lt;span class='label lable-sm label-success'&gt;fresh &lt;/span&gt;
+                        ">Mustard</option>
+                <option data-content="Ketchup &lt;span class='label lable-sm label-default'&gt;tasty &lt;/span&gt;
+                        ">Ketchup</option>
+                <option data-content="Relish &lt;span class='label lable-sm label-warning'&gt;warning &lt;/span&gt;
+                        ">Relish</option>
+                <option data-content="Mayonnaise &lt;span class='label lable-sm label-info'&gt;organic &lt;/span&gt;
+                        ">Mayonnaise</option>
+                <option data-content="Barbecue sauce &lt;span class='label lable-sm label-danger'&gt;hot &lt;/span&gt;
+                        ">Barbecue Sauce</option>
+            </select>
+            <!-- BEGIN HEADER INNER -->
+            <div class="page-header-inner">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="/simba/backend/index.php?r=site%2Findex">
+                    <img class="logo-default" src="/simba/backend/../uploads/settings/simba.jpg" width="100px" alt="logo" style="max-height: 75px;width:100px;margin-top:0px;">                            <!--<img src="" alt="logo" class="logo-default" style="max-height:75px;width:100px;margin-top:0px;"/>--> 
+                    </a>
+                    <div class="menu-toggler sidebar-toggler">
+                        <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+                    </div>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN PAGE ACTIONS -->
+                <!-- DOC: Remove "hide" class to enable the page header actions -->
+                <!-- 		<div class="page-actions">
+                                        <div class="btn-group">
+                                                <button type="button" class="btn red-haze btn-sm dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                <span class="hidden-sm hidden-xs">Actions&nbsp;</span><i class="fa fa-angle-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu" role="menu">
+                                                        <li>
+                                                                <a href="javascript:;">
+                                                                <i class="icon-docs"></i> New Post </a>
+                                                        </li>
+                                                        <li>
+                                                                <a href="javascript:;">
+                                                                <i class="icon-tag"></i> New Comment </a>
+                                                        </li>
+                                                        <li>
+                                                                <a href="javascript:;">
+                                                                <i class="icon-share"></i> Share </a>
+                                                        </li>
+                                                        <li class="divider">
+                                                        </li>
+                                                        <li>
+                                                                <a href="javascript:;">
+                                                                <i class="icon-flag"></i> Comments <span class="badge badge-success">4</span>
+                                                                </a>
+                                                        </li>
+                                                        <li>
+                                                                <a href="javascript:;">
+                                                                <i class="icon-users"></i> Feedbacks <span class="badge badge-danger">2</span>
+                                                                </a>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                </div> -->
+                <!-- END PAGE ACTIONS -->
+                <!-- BEGIN PAGE TOP -->
+                <div class="page-top">
+                    <!-- BEGIN HEADER SEARCH BOX -->
+                    <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
+                    <!-- <form class="search-form" action="extra_search.html" method="GET">
+                            <div class="input-group">
+                                    <input type="text" class="form-control input-sm" placeholder="Search..." name="query">
+                                    <span class="input-group-btn">
+                                    <a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+                                    </span>
+                            </div>
+                    </form> -->
+                    <!-- END HEADER SEARCH BOX -->
+                    <!-- BEGIN TOP NAVIGATION MENU -->
+                    <div class="top-menu">
+                        <ul class="nav navbar-nav pull-right">
+                            <li class="separator hide">
+                            </li>
+                            <!-- BEGIN NOTIFICATION DROPDOWN -->
+                            <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                            <!-- 					<li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
+                                                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                                            <i class="icon-bell"></i>
+                                                                            <span class="badge badge-success">
+                                                                            7 </span>
+                                                                            </a>
+                                                                            <ul class="dropdown-menu">
+                                                                                    <li class="external">
+                                                                                            <h3><span class="bold">12 pending</span> notifications</h3>
+                                                                                            <a href="extra_profile.html">view all</a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                            <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="time">just now</span>
+                                                                                                            <span class="details">
+                                                                                                            <span class="label label-sm label-icon label-success">
+                                                                                                            <i class="fa fa-plus"></i>
+                                                                                                            </span>
+                                                                                                            New user registered. </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="time">3 mins</span>
+                                                                                                            <span class="details">
+                                                                                                            <span class="label label-sm label-icon label-danger">
+                                                                                                            <i class="fa fa-bolt"></i>
+                                                                                                            </span>
+                                                                                                            Server #12 overloaded. </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="time">10 mins</span>
+                                                                                                            <span class="details">
+                                                                                                            <span class="label label-sm label-icon label-warning">
+                                                                                                            <i class="fa fa-bell-o"></i>
+                                                                                                            </span>
+                                                                                                            Server #2 not responding. </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="time">14 hrs</span>
+                                                                                                            <span class="details">
+                                                                                                            <span class="label label-sm label-icon label-info">
+                                                                                                            <i class="fa fa-bullhorn"></i>
+                                                                                                            </span>
+                                                                                                            Application error. </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="time">2 days</span>
+                                                                                                            <span class="details">
+                                                                                                            <span class="label label-sm label-icon label-danger">
+                                                                                                            <i class="fa fa-bolt"></i>
+                                                                                                            </span>
+                                                                                                            Database overloaded 68%. </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="time">3 days</span>
+                                                                                                            <span class="details">
+                                                                                                            <span class="label label-sm label-icon label-danger">
+                                                                                                            <i class="fa fa-bolt"></i>
+                                                                                                            </span>
+                                                                                                            A user IP blocked. </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="time">4 days</span>
+                                                                                                            <span class="details">
+                                                                                                            <span class="label label-sm label-icon label-warning">
+                                                                                                            <i class="fa fa-bell-o"></i>
+                                                                                                            </span>
+                                                                                                            Storage Server #4 not responding dfdfdfd. </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="time">5 days</span>
+                                                                                                            <span class="details">
+                                                                                                            <span class="label label-sm label-icon label-info">
+                                                                                                            <i class="fa fa-bullhorn"></i>
+                                                                                                            </span>
+                                                                                                            System Error. </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="time">9 days</span>
+                                                                                                            <span class="details">
+                                                                                                            <span class="label label-sm label-icon label-danger">
+                                                                                                            <i class="fa fa-bolt"></i>
+                                                                                                            </span>
+                                                                                                            Storage server failed. </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                            </ul>
+                                                                                    </li>
+                                                                            </ul>
+                                                                    </li> -->
+                            <!-- END NOTIFICATION DROPDOWN -->
+                            <!-- <li class="separator hide">
+                            </li> -->
+                            <!-- BEGIN INBOX DROPDOWN -->
+                            <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                            <!-- 					<li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar">
+                                                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                                            <i class="icon-envelope-open"></i>
+                                                                            <span class="badge badge-danger">
+                                                                            4 </span>
+                                                                            </a>
+                                                                            <ul class="dropdown-menu">
+                                                                                    <li class="external">
+                                                                                            <h3>You have <span class="bold">7 New</span> Messages</h3>
+                                                                                            <a href="inbox.html">view all</a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                            <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+                                                                                                    <li>
+                                                                                                            <a href="inbox.html?a=view">
+                                                                                                            <span class="photo">
+                                                                                                            <img src="../../assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
+                                                                                                            </span>
+                                                                                                            <span class="subject">
+                                                                                                            <span class="from">
+                                                                                                            Lisa Wong </span>
+                                                                                                            <span class="time">Just Now </span>
+                                                                                                            </span>
+                                                                                                            <span class="message">
+                                                                                                            Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="inbox.html?a=view">
+                                                                                                            <span class="photo">
+                                                                                                            <img src="../../assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
+                                                                                                            </span>
+                                                                                                            <span class="subject">
+                                                                                                            <span class="from">
+                                                                                                            Richard Doe </span>
+                                                                                                            <span class="time">16 mins </span>
+                                                                                                            </span>
+                                                                                                            <span class="message">
+                                                                                                            Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="inbox.html?a=view">
+                                                                                                            <span class="photo">
+                                                                                                            <img src="../../assets/admin/layout3/img/avatar1.jpg" class="img-circle" alt="">
+                                                                                                            </span>
+                                                                                                            <span class="subject">
+                                                                                                            <span class="from">
+                                                                                                            Bob Nilson </span>
+                                                                                                            <span class="time">2 hrs </span>
+                                                                                                            </span>
+                                                                                                            <span class="message">
+                                                                                                            Vivamus sed nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="inbox.html?a=view">
+                                                                                                            <span class="photo">
+                                                                                                            <img src="../../assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
+                                                                                                            </span>
+                                                                                                            <span class="subject">
+                                                                                                            <span class="from">
+                                                                                                            Lisa Wong </span>
+                                                                                                            <span class="time">40 mins </span>
+                                                                                                            </span>
+                                                                                                            <span class="message">
+                                                                                                            Vivamus sed auctor 40% nibh congue nibh... </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="inbox.html?a=view">
+                                                                                                            <span class="photo">
+                                                                                                            <img src="../../assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
+                                                                                                            </span>
+                                                                                                            <span class="subject">
+                                                                                                            <span class="from">
+                                                                                                            Richard Doe </span>
+                                                                                                            <span class="time">46 mins </span>
+                                                                                                            </span>
+                                                                                                            <span class="message">
+                                                                                                            Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                            </ul>
+                                                                                    </li>
+                                                                            </ul>
+                                                                    </li> -->
+                            <!-- END INBOX DROPDOWN -->
+                            <!-- <li class="separator hide">
+                            </li> -->
+                            <!-- BEGIN TODO DROPDOWN -->
+                            <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                            <!-- 					<li class="dropdown dropdown-extended dropdown-tasks dropdown-dark" id="header_task_bar">
+                                                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                                            <i class="icon-calendar"></i>
+                                                                            <span class="badge badge-primary">
+                                                                            3 </span>
+                                                                            </a>
+                                                                            <ul class="dropdown-menu extended tasks">
+                                                                                    <li class="external">
+                                                                                            <h3>You have <span class="bold">12 pending</span> tasks</h3>
+                                                                                            <a href="page_todo.html">view all</a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                            <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="task">
+                                                                                                            <span class="desc">New release v1.2 </span>
+                                                                                                            <span class="percent">30%</span>
+                                                                                                            </span>
+                                                                                                            <span class="progress">
+                                                                                                            <span style="width: 40%;" class="progress-bar progress-bar-success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">40% Complete</span></span>
+                                                                                                            </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="task">
+                                                                                                            <span class="desc">Application deployment</span>
+                                                                                                            <span class="percent">65%</span>
+                                                                                                            </span>
+                                                                                                            <span class="progress">
+                                                                                                            <span style="width: 65%;" class="progress-bar progress-bar-danger" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">65% Complete</span></span>
+                                                                                                            </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="task">
+                                                                                                            <span class="desc">Mobile app release</span>
+                                                                                                            <span class="percent">98%</span>
+                                                                                                            </span>
+                                                                                                            <span class="progress">
+                                                                                                            <span style="width: 98%;" class="progress-bar progress-bar-success" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">98% Complete</span></span>
+                                                                                                            </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="task">
+                                                                                                            <span class="desc">Database migration</span>
+                                                                                                            <span class="percent">10%</span>
+                                                                                                            </span>
+                                                                                                            <span class="progress">
+                                                                                                            <span style="width: 10%;" class="progress-bar progress-bar-warning" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">10% Complete</span></span>
+                                                                                                            </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="task">
+                                                                                                            <span class="desc">Web server upgrade</span>
+                                                                                                            <span class="percent">58%</span>
+                                                                                                            </span>
+                                                                                                            <span class="progress">
+                                                                                                            <span style="width: 58%;" class="progress-bar progress-bar-info" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">58% Complete</span></span>
+                                                                                                            </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="task">
+                                                                                                            <span class="desc">Mobile development</span>
+                                                                                                            <span class="percent">85%</span>
+                                                                                                            </span>
+                                                                                                            <span class="progress">
+                                                                                                            <span style="width: 85%;" class="progress-bar progress-bar-success" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">85% Complete</span></span>
+                                                                                                            </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                            <a href="javascript:;">
+                                                                                                            <span class="task">
+                                                                                                            <span class="desc">New UI release</span>
+                                                                                                            <span class="percent">38%</span>
+                                                                                                            </span>
+                                                                                                            <span class="progress progress-striped">
+                                                                                                            <span style="width: 38%;" class="progress-bar progress-bar-important" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">38% Complete</span></span>
+                                                                                                            </span>
+                                                                                                            </a>
+                                                                                                    </li>
+                                                                                            </ul>
+                                                                                    </li>
+                                                                            </ul>
+                                                                    </li> -->
+                            <!-- END TODO DROPDOWN -->
+                            <!-- BEGIN USER LOGIN DROPDOWN -->
+                            <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                            <li class="dropdown dropdown-user dropdown-dark">
+                                <a style="color:white !important" href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                    <span class="username username-hide-on-mobile">
+                                        admin</span>
+                                    <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
+                                    <!--<img alt="" class="img-circle" src="../../assets/admin/layout4/img/avatar9.jpg"/>-->
+                                    <img class="img-circle" src="/simba/backend/assets_b/images/avatar.png" alt="logo">						</a>
+                                <ul class="dropdown-menu dropdown-menu-default">
+                                    <!--							<li>
+                                                                                                    <a href="/simba/backend/index.php?r=user%2Fprofile">
+                                                                                                    <i class="icon-user"></i> Settings </a>
+                                                                                            </li>-->
+                                    <li>
+                                        <a style="color:white !important" href="/simba/backend/index.php?r=settings%2Findex">
+                                            <i class="icon-settings"></i> Settings </a>
+                                    </li>
+                                    <!-- <li>
+                                            <a href="page_calendar.html">
+                                            <i class="icon-calendar"></i> My Calendar </a>
+                                    </li>
+                                    <li>
+                                            <a href="inbox.html">
+                                            <i class="icon-envelope-open"></i> My Inbox <span class="badge badge-danger">
+                                            3 </span>
+                                            </a>
+                                    </li>
+                                    <li>
+                                            <a href="page_todo.html">
+                                            <i class="icon-rocket"></i> My Tasks <span class="badge badge-success">
+                                            7 </span>
+                                            </a>
+                                    </li> -->
+                                    <li class="divider"></li>
+                                    <!-- <li>
+                                            <a href="extra_lock.html">
+                                            <i class="icon-lock"></i> Lock Screen </a>
+                                    </li> -->
+                                    <li>
+                                        <a style="color:white !important" href="/simba/backend/index.php?r=site%2Flogout">
+                                            <i class="icon-key"></i> Log Out </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- END USER LOGIN DROPDOWN -->
+                        </ul>
+                    </div>
+                    <!-- END TOP NAVIGATION MENU -->
+                </div>
+                <!-- END PAGE TOP -->
+            </div>
+            <!-- END HEADER INNER -->
+        </div>
+        <!-- END HEADER --><div class="clearfix"></div><div class="page-container"><!-- BEGIN SIDEBAR -->
+            <div class="page-sidebar-wrapper">
+                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                <div class="page-sidebar md-shadow-z-2-i  navbar-collapse ">
+
+                    <!--        <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                    
+                                <li class="start ">
+                                    <a href="/simba/backend/">
+                                        <i class="icon-home"></i>
+                                        <span class="title">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li class=" last">
+                                    <a href="javascript:;">
+                                        <i class="icon-users"></i>
+                                        <span class="title">Users</span>
+                                        <span class="arrow "></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="">
+                                            <a href="/simba/backend/index.php?r=user%2Findex">
+                                                <i class="fa fa-chevron-right"></i>
+                                                <span class="title">Users</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="/simba/backend/index.php?r=user-type%2Findex">
+                                                <i class="fa fa-chevron-right"></i>
+                                                <span class="title">User Types</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                    
+                                <li class="start ">
+                                    <a href="/simba/backend/index.php?r=settings%2Findex">
+                                        <i class="icon-settings"></i>
+                                        <span class="title">Settings</span>
+                                    </a>
+                                </li>-->
+
+                    <!--<li class="last">
+                            <a href="javascript:;">
+                            <i class="icon-users"></i>
+                            <span class="title">Rbac Manager</span>
+                            <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+                                    <li>
+                                            <a href="/simba/backend/index.php?r=rbac">
+                                            RBAC</a>
+                                    </li>
+                                    <li>
+                                            <a href="/simba/backend/index.php?r=auth-assignment">
+                                            Auth Assignment</a>
+                                    </li>
+                                    <li>
+                                            <a href="/simba/backend/index.php?r=auth-item">
+                                            Auth Item</a>
+                                    </li>
+                                    <li>
+                                            <a href="/simba/backend/index.php?r=auth-item-child">
+                                            Auth Item Child</a>
+                                    </li>
+                                    <li>
+                                            <a href="/simba/backend/index.php?r=auth-rule">
+                                            Auth Rule</a>
+                                    </li>
+                            </ul>
+                    </li>-->
+                    </ul>
+
+                    <div class="bottom" style="margin-bottom:0px;"><div class=""><ul class="page-sidebar-menu"><li><a href="/simba/backend/index.php?r=site%2Findex" ><i class="icon-home"></i> &nbsp;<span class="title">Dashboard</span></a></li>
+                                <li><a href="/simba/backend/index.php?r=school%2Findex" ><i class="icon-graduation"></i> &nbsp;<span class="title">Schools</span></a></li>
+                                <li><a href="/simba/backend/index.php?r=segment%2Findex" ><i class="icon-list"></i> &nbsp;<span class="title">Segments</span></a></li>
+                                <li><a href="/simba/backend/index.php?r=news%2Findex" ><i class="icon-paper-clip"></i> &nbsp;<span class="title">News</span></a></li>
+                                <li><a href="#" class="kv-toggle"><span class="opened arrow open" style="display:none"><i class=""></i></span><span class="closed arrow"><i class=""></i></span><i class="icon-users"></i> &nbsp;<span class="title">Users</span></a>
+                                    <ul class='sub-menu'>
+                                        <li><a href="/simba/backend/index.php?r=user%2Findex" > <i class="icon-user"></i> &nbsp;<span class="title">Users</span></a></li>
+                                        <li><a href="/simba/backend/index.php?r=user-type%2Findex" > <i class="icon-layers"></i> &nbsp;<span class="title">User Types</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="kv-toggle"><span class="opened arrow open" style="display:none"><i class=""></i></span><span class="closed arrow"><i class=""></i></span><i class="icon-support"></i> &nbsp;<span class="title">Support Manager</span></a>
+                                    <ul class='sub-menu'>
+                                        <li><a href="/simba/backend/index.php?r=category%2Findex" > <i class="icon-tag"></i> &nbsp;<span class="title">Categories</span></a></li>
+                                        <li><a href="/simba/backend/index.php?r=post%2Findex" > <i class="icon-pencil"></i> &nbsp;<span class="title">Posts</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="active"><a href="#" class="kv-toggle"><span class="opened arrow open"><i class=""></i></span><span class="closed arrow" style="display:none"><i class=""></i></span><i class="icon-list"></i> &nbsp;<span class="title">Curriculum Manager</span></a>
+                                    <ul class='sub-menu'>
+                                        <li><a href="/simba/backend/index.php?r=preferences%2Findex" > <i class="icon-support"></i> &nbsp;<span class="title">Preferences</span></a></li>
+                                        <li><a href="/simba/backend/index.php?r=subjects%2Findex" > <i class="icon-tag"></i> &nbsp;<span class="title">Subjects</span></a></li>
+                                        <li><a href="/simba/backend/index.php?r=sub-subjects%2Findex" > <i class="icon-notebook"></i> &nbsp;<span class="title">Learning Outcomes</span></a></li>
+                                        <li><a href="/simba/backend/index.php?r=activity-question%2Findex" > <i class="icon-question"></i> &nbsp;<span class="title">Activity Question</span></a></li>
+                                        <li><a href="/simba/backend/index.php?r=activities%2Findex" > <i class="icon-list"></i> &nbsp;<span class="title">Activities</span></a></li>
+                                        <li><a href="/simba/backend/index.php?r=cycle-templates%2Findex" > <i class="icon-grid"></i> &nbsp;<span class="title">Cycle Templates</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/simba/backend/index.php?r=settings%2Findex" ><i class="icon-settings"></i> &nbsp;<span class="title">Settings</span></a></li></ul></div></div>        <!-- END SIDEBAR MENU -->
+                </div>
+            </div>
+            <!-- END SIDEBAR --><div class="page-content-wrapper"><div class="page-content"><!-- BEGIN PAGE HEAD -->
+                    <!--<div class="page-head">-->
+                    <!-- BEGIN PAGE TITLE -->
+                    <!--<div class="page-title">-->
+                    <h1>Cycle Templates&nbsp;<small></small></h1>
+                    <!--</div>-->
+                    <!-- END PAGE TITLE -->
+                    <!--</div>-->
+                    <!-- END PAGE HEAD -->
+                    <!-- BEGIN PAGE BREADCRUMB -->
+                    <ul class="page-breadcrumb breadcrumb">
+                        <li><a href='/simba/backend/index.php?r=site%2Findex'>Home</a><i class='fa fa-circle'></i></li><li><a href='/simba/backend/index.php?r=cycle-templates%2Findex'>Cycle Templates</a><i class='fa fa-circle'></i></li><li><a href='#'>Update Cycle Templates</a></li></ul>
+                    <!-- END PAGE BREADCRUMB --><div class="row"><div class="col-md-12"><div class="portlet light">
+                                <div class="portlet-title">
+                                    <div class="caption font-green-sharp">
+                                        <i class="icon-tag font-green-sharp"></i>
+                                        <span class="caption-subject bold uppercase">Update</span>
+                                        <span class="caption-helper">a Cycle Templates</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="user-create">
+
+
+
+
+                                        <div class="portlet light bordered" id="form_wizard_2">
+                                            <div class="row">
+                                                <div style="display:none">
+                                                    <div id="cycle-template-category-hide1" >
+
+                                                        <div clas="form-group form-md-line-input field-activityquestion-type required">
+                                                            <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                            <div class="col-md-3">
+                                                                <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates1[duration][]">                            <div class="help-block"></div>
+                                                            </div>
+                                                            <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                            <div class="col-md-3">
+                                                                <select class="form-control" name="DurationANDActivityCategoryTemplates1[activity_category][]">
+                                                                    <option value="">Select Category</option>
+                                                                    <option value="1">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="2">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:orange;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;orange&lt;/span&gt;</option>
+                                                                    <option value="3">text&lt;span class=&quot;pull-right&quot; style=&quot;background:brown;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;brown&lt;/span&gt;</option>
+                                                                    <option value="4">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:yellow;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;yellow&lt;/span&gt;</option>
+                                                                    <option value="5">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:blue;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;blue&lt;/span&gt;</option>
+                                                                    <option value="6">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:yellow;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;yellow&lt;/span&gt;</option>
+                                                                    <option value="7">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:orange;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;orange&lt;/span&gt;</option>
+                                                                    <option value="8">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="9">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="10">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="11">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                </select>       
+                                                                <div class="help-block"></div>
+                                                            </div>
+                                                            <div class="">
+                                                                <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important;font-weight:bold" onclick="return doRemove(this, 1)">Remove</a>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div id="cycle-template-category-hide2" >
+
+                                                        <div clas="form-group form-md-line-input field-activityquestion-type required">
+                                                            <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                            <div class="col-md-3">
+                                                                <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates2[duration][]">                            <div class="help-block"></div>
+                                                            </div>
+                                                            <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                            <div class="col-md-3">
+                                                                <select class="form-control" name="DurationANDActivityCategoryTemplates2[activity_category][]">
+                                                                    <option value="">Select Category</option>
+                                                                    <option value="1">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="2">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:orange;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;orange&lt;/span&gt;</option>
+                                                                    <option value="3">text&lt;span class=&quot;pull-right&quot; style=&quot;background:brown;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;brown&lt;/span&gt;</option>
+                                                                    <option value="4">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:yellow;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;yellow&lt;/span&gt;</option>
+                                                                    <option value="5">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:blue;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;blue&lt;/span&gt;</option>
+                                                                    <option value="6">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:yellow;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;yellow&lt;/span&gt;</option>
+                                                                    <option value="7">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:orange;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;orange&lt;/span&gt;</option>
+                                                                    <option value="8">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="9">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="10">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="11">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                </select>       
+                                                                <div class="help-block"></div>
+                                                            </div>
+                                                            <div class="">
+                                                                <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important;font-weight:bold" onclick="return doRemove(this, 2)">Remove</a>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div id="cycle-template-category-hide3" >
+
+                                                        <div clas="form-group form-md-line-input field-activityquestion-type required">
+                                                            <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                            <div class="col-md-3">
+                                                                <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates3[duration][]">                            <div class="help-block"></div>
+                                                            </div>
+                                                            <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                            <div class="col-md-3">
+                                                                <select class="form-control" name="DurationANDActivityCategoryTemplates3[activity_category][]">
+                                                                    <option value="">Select Category</option>
+                                                                    <option value="1">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="2">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:orange;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;orange&lt;/span&gt;</option>
+                                                                    <option value="3">text&lt;span class=&quot;pull-right&quot; style=&quot;background:brown;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;brown&lt;/span&gt;</option>
+                                                                    <option value="4">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:yellow;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;yellow&lt;/span&gt;</option>
+                                                                    <option value="5">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:blue;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;blue&lt;/span&gt;</option>
+                                                                    <option value="6">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:yellow;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;yellow&lt;/span&gt;</option>
+                                                                    <option value="7">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:orange;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;orange&lt;/span&gt;</option>
+                                                                    <option value="8">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="9">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="10">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="11">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                </select>       
+                                                                <div class="help-block"></div>
+                                                            </div>
+                                                            <div class="">
+                                                                <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important;font-weight:bold" onclick="return doRemove(this, 3)">Remove</a>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div id="cycle-template-category-hide4" >
+
+                                                        <div clas="form-group form-md-line-input field-activityquestion-type required">
+                                                            <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                            <div class="col-md-3">
+                                                                <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates4[duration][]">                            <div class="help-block"></div>
+                                                            </div>
+                                                            <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                            <div class="col-md-3">
+                                                                <select class="form-control" name="DurationANDActivityCategoryTemplates4[activity_category][]">
+                                                                    <option value="">Select Category</option>
+                                                                    <option value="1">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="2">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:orange;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;orange&lt;/span&gt;</option>
+                                                                    <option value="3">text&lt;span class=&quot;pull-right&quot; style=&quot;background:brown;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;brown&lt;/span&gt;</option>
+                                                                    <option value="4">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:yellow;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;yellow&lt;/span&gt;</option>
+                                                                    <option value="5">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:blue;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;blue&lt;/span&gt;</option>
+                                                                    <option value="6">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:yellow;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;yellow&lt;/span&gt;</option>
+                                                                    <option value="7">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:orange;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;orange&lt;/span&gt;</option>
+                                                                    <option value="8">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="9">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="10">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="11">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                </select>       
+                                                                <div class="help-block"></div>
+                                                            </div>
+                                                            <div class="">
+                                                                <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important;font-weight:bold" onclick="return doRemove(this, 4)">Remove</a>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div id="cycle-template-category-hide5" >
+
+                                                        <div clas="form-group form-md-line-input field-activityquestion-type required">
+                                                            <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                            <div class="col-md-3">
+                                                                <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates5[duration][]">                            <div class="help-block"></div>
+                                                            </div>
+                                                            <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                            <div class="col-md-3">
+                                                                <select class="form-control" name="DurationANDActivityCategoryTemplates5[activity_category][]">
+                                                                    <option value="">Select Category</option>
+                                                                    <option value="1">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="2">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:orange;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;orange&lt;/span&gt;</option>
+                                                                    <option value="3">text&lt;span class=&quot;pull-right&quot; style=&quot;background:brown;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;brown&lt;/span&gt;</option>
+                                                                    <option value="4">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:yellow;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;yellow&lt;/span&gt;</option>
+                                                                    <option value="5">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:blue;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;blue&lt;/span&gt;</option>
+                                                                    <option value="6">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:yellow;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;yellow&lt;/span&gt;</option>
+                                                                    <option value="7">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:orange;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;orange&lt;/span&gt;</option>
+                                                                    <option value="8">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="9">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="10">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="11">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                </select>       
+                                                                <div class="help-block"></div>
+                                                            </div>
+                                                            <div class="">
+                                                                <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important;font-weight:bold" onclick="return doRemove(this, 5)">Remove</a>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div id="cycle-template-category-hide6" >
+
+                                                        <div clas="form-group form-md-line-input field-activityquestion-type required">
+                                                            <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                            <div class="col-md-3">
+                                                                <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates6[duration][]">                            <div class="help-block"></div>
+                                                            </div>
+                                                            <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                            <div class="col-md-3">
+                                                                <select class="form-control" name="DurationANDActivityCategoryTemplates6[activity_category][]">
+                                                                    <option value="">Select Category</option>
+                                                                    <option value="1">Free Play <?php html_entity_decode('&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;') ?></option>
+                                                                    <option value="2">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:orange;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;orange&lt;/span&gt;</option>
+                                                                    <option value="3">text&lt;span class=&quot;pull-right&quot; style=&quot;background:brown;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;brown&lt;/span&gt;</option>
+                                                                    <option value="4">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:yellow;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;yellow&lt;/span&gt;</option>
+                                                                    <option value="5">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:blue;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;blue&lt;/span&gt;</option>
+                                                                    <option value="6">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:yellow;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;yellow&lt;/span&gt;</option>
+                                                                    <option value="7">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:orange;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;orange&lt;/span&gt;</option>
+                                                                    <option value="8">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="9">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="10">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                    <option value="11">Free Play&lt;span class=&quot;pull-right&quot; style=&quot;background:black;height:70px;width:70px;color:white;font-weight:bold&quot;&gt;black&lt;/span&gt;</option>
+                                                                </select>       
+                                                                <div class="help-block"></div>
+                                                            </div>
+                                                            <div class="">
+                                                                <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important;font-weight:bold" onclick="return doRemove(this, 6)">Remove</a>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div> 
+                                                <form id="cycle" class="form-horizontal" name="cycle" action="/simba/backend/index.php?r=cycle-templates%2Fupdatetemplate&amp;id=47" method="post" enctype="multipart/form-data">
+                                                    <input type="hidden" name="_backendCsrf" value="RVp4UzVOejUiLkpjcSUdRwEwH2ACGBRsMyooZUwKLQ0EMhICWggyUg==">
+
+                                                    <div class="form-wizard">
+                                                        <div class="form-body">
+                                                            <ul class="nav nav-pills nav-justified steps">
+                                                                <li>
+                                                                    <a href = "#tab1" data-toggle = "tab" class = "step">
+                                                                        <span class = "number"> 1 </span>
+                                                                        <span class = "desc">
+                                                                            <i class = "fa fa-check"></i> Day 1 </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href = "#tab2" data-toggle = "tab" class = "step">
+                                                                        <span class = "number"> 2 </span>
+                                                                        <span class = "desc">
+                                                                            <i class = "fa fa-check"></i> Day 2 </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href = "#tab3" data-toggle = "tab" class = "step">
+                                                                        <span class = "number"> 3 </span>
+                                                                        <span class = "desc">
+                                                                            <i class = "fa fa-check"></i> Day 3 </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href = "#tab4" data-toggle = "tab" class = "step">
+                                                                        <span class = "number"> 4 </span>
+                                                                        <span class = "desc">
+                                                                            <i class = "fa fa-check"></i> Day 4 </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href = "#tab5" data-toggle = "tab" class = "step">
+                                                                        <span class = "number"> 5 </span>
+                                                                        <span class = "desc">
+                                                                            <i class = "fa fa-check"></i> Day 5 </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href = "#tab6" data-toggle = "tab" class = "step">
+                                                                        <span class = "number"> 6 </span>
+                                                                        <span class = "desc">
+                                                                            <i class = "fa fa-check"></i> Day 6 </span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                            <div id="bar" class="progress progress-striped" role="progressbar">
+                                                                <div class="progress-bar progress-bar-success"> </div>
+                                                            </div>
+                                                            <div class="tab-content">
+                                                                <div class="alert alert-danger display-none">
+                                                                    <button class="close" data-dismiss="alert"></button> You have some form errors. Please check below.
+                                                                </div>
+                                                                <div class="alert alert-success display-none">
+                                                                    <button class="close" data-dismiss="alert"></button> Your form validation is successful! 
+                                                                </div>
+                                                                <div class="tab-pane active" id="tab1">
+                                                                    <div class="form-group form-md-line-input field-cycletemplates-for_day-1 has-success">
+                                                                        <label for="" class="control-label col-md-3">Day Name</label> 
+                                                                        <div class="col-md-6">
+                                                                            <input type="text" id="day-templates1" class="form-control" name="DayTemplates1" value="Day-12">  
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group form-md-line-input field-cycletemplates-for_day-1 has-success">
+                                                                        <label for="" class="control-label col-md-3">Emphasis</label> 
+                                                                        <div class="col-md-6">
+                                                                            <input type="text" id="emphasis-templates1" class="form-control" name="EmphasisTemplates1" value="Time">  
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="cycle-template-category-show1">
+                                                                        <div id="cycle-template-category-hide1" >
+                                                                            <div class="form-group form-md-line-input field-activityquestion-type required">
+                                                                                <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                                                <div class="col-md-3">
+                                                                                    <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates1[duration][]" value="20">                                                <div class="help-block"></div>
+                                                                                </div>
+                                                                                <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                                                <div class="col-md-3">
+                                                                                    <select type="raw" class="form-control" name="DurationANDActivityCategoryTemplates1[activity_category][]">
+                                                                                        <option value="">Select Category</option>
+                                                                                        <option value="1">Free Play</option>
+                                                                                        <option value="2">Free Play</option>
+                                                                                        <option value="3">text</option>
+                                                                                        <option value="4">Free Play</option>
+                                                                                        <option value="5">Free Play</option>
+                                                                                        <option value="6">Free Play</option>
+                                                                                        <option value="7">Free Play</option>
+                                                                                        <option value="8">Free Play</option>
+                                                                                        <option value="9" selected>Free Play</option>
+                                                                                        <option value="10">Free Play</option>
+                                                                                        <option value="11">Free Play</option>
+                                                                                    </select>       
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important ;font-weight:bold" onclick="return doRemove(this, 1)">Remove</a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group form-md-line-input field-activityquestion-type required">
+                                                                                <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                                                <div class="col-md-3">
+                                                                                    <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates1[duration][]" value="30">                                                <div class="help-block"></div>
+                                                                                </div>
+                                                                                <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                                                <div class="col-md-3">
+                                                                                    <select type="raw" class="form-control" name="DurationANDActivityCategoryTemplates1[activity_category][]">
+                                                                                        <option value="">Select Category</option>
+                                                                                        <option value="1">Free Play</option>
+                                                                                        <option value="2">Free Play</option>
+                                                                                        <option value="3" selected>text</option>
+                                                                                        <option value="4">Free Play</option>
+                                                                                        <option value="5">Free Play</option>
+                                                                                        <option value="6">Free Play</option>
+                                                                                        <option value="7">Free Play</option>
+                                                                                        <option value="8">Free Play</option>
+                                                                                        <option value="9">Free Play</option>
+                                                                                        <option value="10">Free Play</option>
+                                                                                        <option value="11">Free Play</option>
+                                                                                    </select>       
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important ;font-weight:bold" onclick="return doRemove(this, 1)">Remove</a>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="pull-right">
+                                                                        <a href="javascript:;"class="btn btn-default btn-circle" onclick="return chk(1)" ><i class="fa fa-plus"></i>Add More</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane active" id="tab2">
+                                                                    <div class="form-group form-md-line-input field-cycletemplates-for_day-1 has-success">
+                                                                        <label for="" class="control-label col-md-3">Day Name</label> 
+                                                                        <div class="col-md-6">
+                                                                            <input type="text" id="day-templates2" class="form-control" name="DayTemplates2" value="Day-21">  
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group form-md-line-input field-cycletemplates-for_day-1 has-success">
+                                                                        <label for="" class="control-label col-md-3">Emphasis</label> 
+                                                                        <div class="col-md-6">
+                                                                            <input type="text" id="emphasis-templates2" class="form-control" name="EmphasisTemplates2" value="Time">  
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="cycle-template-category-show2">
+                                                                        <div id="cycle-template-category-hide2" >
+                                                                            <div class="form-group form-md-line-input field-activityquestion-type required">
+                                                                                <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                                                <div class="col-md-3">
+                                                                                    <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates2[duration][]" value="20">                                                <div class="help-block"></div>
+                                                                                </div>
+                                                                                <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                                                <div class="col-md-3">
+                                                                                    <select type="raw" class="form-control" name="DurationANDActivityCategoryTemplates2[activity_category][]">
+                                                                                        <option value="">Select Category</option>
+                                                                                        <option value="1">Free Play</option>
+                                                                                        <option value="2">Free Play</option>
+                                                                                        <option value="3">text</option>
+                                                                                        <option value="4">Free Play</option>
+                                                                                        <option value="5">Free Play</option>
+                                                                                        <option value="6">Free Play</option>
+                                                                                        <option value="7" selected>Free Play</option>
+                                                                                        <option value="8">Free Play</option>
+                                                                                        <option value="9">Free Play</option>
+                                                                                        <option value="10">Free Play</option>
+                                                                                        <option value="11">Free Play</option>
+                                                                                    </select>       
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important ;font-weight:bold" onclick="return doRemove(this, 2)">Remove</a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group form-md-line-input field-activityquestion-type required">
+                                                                                <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                                                <div class="col-md-3">
+                                                                                    <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates2[duration][]" value="45">                                                <div class="help-block"></div>
+                                                                                </div>
+                                                                                <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                                                <div class="col-md-3">
+                                                                                    <select type="raw" class="form-control" name="DurationANDActivityCategoryTemplates2[activity_category][]">
+                                                                                        <option value="">Select Category</option>
+                                                                                        <option value="1">Free Play</option>
+                                                                                        <option value="2">Free Play</option>
+                                                                                        <option value="3">text</option>
+                                                                                        <option value="4">Free Play</option>
+                                                                                        <option value="5">Free Play</option>
+                                                                                        <option value="6">Free Play</option>
+                                                                                        <option value="7">Free Play</option>
+                                                                                        <option value="8" selected>Free Play</option>
+                                                                                        <option value="9">Free Play</option>
+                                                                                        <option value="10">Free Play</option>
+                                                                                        <option value="11">Free Play</option>
+                                                                                    </select>       
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important ;font-weight:bold" onclick="return doRemove(this, 2)">Remove</a>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="pull-right">
+                                                                        <a href="javascript:;"class="btn btn-default btn-circle" onclick="return chk(2)" ><i class="fa fa-plus"></i>Add More</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane active" id="tab3">
+                                                                    <div class="form-group form-md-line-input field-cycletemplates-for_day-1 has-success">
+                                                                        <label for="" class="control-label col-md-3">Day Name</label> 
+                                                                        <div class="col-md-6">
+                                                                            <input type="text" id="day-templates3" class="form-control" name="DayTemplates3" value="Day-31">  
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group form-md-line-input field-cycletemplates-for_day-1 has-success">
+                                                                        <label for="" class="control-label col-md-3">Emphasis</label> 
+                                                                        <div class="col-md-6">
+                                                                            <input type="text" id="emphasis-templates3" class="form-control" name="EmphasisTemplates3" value="Time">  
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="cycle-template-category-show3">
+                                                                        <div id="cycle-template-category-hide3" >
+                                                                            <div class="form-group form-md-line-input field-activityquestion-type required">
+                                                                                <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                                                <div class="col-md-3">
+                                                                                    <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates3[duration][]" value="20">                                                <div class="help-block"></div>
+                                                                                </div>
+                                                                                <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                                                <div class="col-md-3">
+                                                                                    <select type="raw" class="form-control" name="DurationANDActivityCategoryTemplates3[activity_category][]">
+                                                                                        <option value="">Select Category</option>
+                                                                                        <option value="1" selected>Free Play</option>
+                                                                                        <option value="2">Free Play</option>
+                                                                                        <option value="3">text</option>
+                                                                                        <option value="4">Free Play</option>
+                                                                                        <option value="5">Free Play</option>
+                                                                                        <option value="6">Free Play</option>
+                                                                                        <option value="7">Free Play</option>
+                                                                                        <option value="8">Free Play</option>
+                                                                                        <option value="9">Free Play</option>
+                                                                                        <option value="10">Free Play</option>
+                                                                                        <option value="11">Free Play</option>
+                                                                                    </select>       
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important ;font-weight:bold" onclick="return doRemove(this, 3)">Remove</a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group form-md-line-input field-activityquestion-type required">
+                                                                                <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                                                <div class="col-md-3">
+                                                                                    <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates3[duration][]" value="45">                                                <div class="help-block"></div>
+                                                                                </div>
+                                                                                <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                                                <div class="col-md-3">
+                                                                                    <select type="raw" class="form-control" name="DurationANDActivityCategoryTemplates3[activity_category][]">
+                                                                                        <option value="">Select Category</option>
+                                                                                        <option value="1">Free Play</option>
+                                                                                        <option value="2">Free Play</option>
+                                                                                        <option value="3">text</option>
+                                                                                        <option value="4">Free Play</option>
+                                                                                        <option value="5">Free Play</option>
+                                                                                        <option value="6" selected>Free Play</option>
+                                                                                        <option value="7">Free Play</option>
+                                                                                        <option value="8">Free Play</option>
+                                                                                        <option value="9">Free Play</option>
+                                                                                        <option value="10">Free Play</option>
+                                                                                        <option value="11">Free Play</option>
+                                                                                    </select>       
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important ;font-weight:bold" onclick="return doRemove(this, 3)">Remove</a>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="pull-right">
+                                                                        <a href="javascript:;"class="btn btn-default btn-circle" onclick="return chk(3)" ><i class="fa fa-plus"></i>Add More</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane active" id="tab4">
+                                                                    <div class="form-group form-md-line-input field-cycletemplates-for_day-1 has-success">
+                                                                        <label for="" class="control-label col-md-3">Day Name</label> 
+                                                                        <div class="col-md-6">
+                                                                            <input type="text" id="day-templates4" class="form-control" name="DayTemplates4" value="day-41">  
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group form-md-line-input field-cycletemplates-for_day-1 has-success">
+                                                                        <label for="" class="control-label col-md-3">Emphasis</label> 
+                                                                        <div class="col-md-6">
+                                                                            <input type="text" id="emphasis-templates4" class="form-control" name="EmphasisTemplates4" value="Time">  
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="cycle-template-category-show4">
+                                                                        <div id="cycle-template-category-hide4" >
+                                                                            <div class="form-group form-md-line-input field-activityquestion-type required">
+                                                                                <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                                                <div class="col-md-3">
+                                                                                    <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates4[duration][]" value="20">                                                <div class="help-block"></div>
+                                                                                </div>
+                                                                                <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                                                <div class="col-md-3">
+                                                                                    <select type="raw" class="form-control" name="DurationANDActivityCategoryTemplates4[activity_category][]">
+                                                                                        <option value="">Select Category</option>
+                                                                                        <option value="1">Free Play</option>
+                                                                                        <option value="2">Free Play</option>
+                                                                                        <option value="3">text</option>
+                                                                                        <option value="4">Free Play</option>
+                                                                                        <option value="5">Free Play</option>
+                                                                                        <option value="6">Free Play</option>
+                                                                                        <option value="7">Free Play</option>
+                                                                                        <option value="8">Free Play</option>
+                                                                                        <option value="9">Free Play</option>
+                                                                                        <option value="10" selected>Free Play</option>
+                                                                                        <option value="11">Free Play</option>
+                                                                                    </select>       
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important ;font-weight:bold" onclick="return doRemove(this, 4)">Remove</a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group form-md-line-input field-activityquestion-type required">
+                                                                                <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                                                <div class="col-md-3">
+                                                                                    <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates4[duration][]" value="30">                                                <div class="help-block"></div>
+                                                                                </div>
+                                                                                <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                                                <div class="col-md-3">
+                                                                                    <select type="raw" class="form-control" name="DurationANDActivityCategoryTemplates4[activity_category][]">
+                                                                                        <option value="">Select Category</option>
+                                                                                        <option value="1">Free Play</option>
+                                                                                        <option value="2">Free Play</option>
+                                                                                        <option value="3">text</option>
+                                                                                        <option value="4">Free Play</option>
+                                                                                        <option value="5">Free Play</option>
+                                                                                        <option value="6">Free Play</option>
+                                                                                        <option value="7">Free Play</option>
+                                                                                        <option value="8">Free Play</option>
+                                                                                        <option value="9" selected>Free Play</option>
+                                                                                        <option value="10">Free Play</option>
+                                                                                        <option value="11">Free Play</option>
+                                                                                    </select>       
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important ;font-weight:bold" onclick="return doRemove(this, 4)">Remove</a>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="pull-right">
+                                                                        <a href="javascript:;"class="btn btn-default btn-circle" onclick="return chk(4)" ><i class="fa fa-plus"></i>Add More</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane active" id="tab5">
+                                                                    <div class="form-group form-md-line-input field-cycletemplates-for_day-1 has-success">
+                                                                        <label for="" class="control-label col-md-3">Day Name</label> 
+                                                                        <div class="col-md-6">
+                                                                            <input type="text" id="day-templates5" class="form-control" name="DayTemplates5" value="Day-51">  
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group form-md-line-input field-cycletemplates-for_day-1 has-success">
+                                                                        <label for="" class="control-label col-md-3">Emphasis</label> 
+                                                                        <div class="col-md-6">
+                                                                            <input type="text" id="emphasis-templates5" class="form-control" name="EmphasisTemplates5" value="Time">  
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="cycle-template-category-show5">
+                                                                        <div id="cycle-template-category-hide5" >
+                                                                            <div class="form-group form-md-line-input field-activityquestion-type required">
+                                                                                <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                                                <div class="col-md-3">
+                                                                                    <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates5[duration][]" value="20">                                                <div class="help-block"></div>
+                                                                                </div>
+                                                                                <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                                                <div class="col-md-3">
+                                                                                    <select type="raw" class="form-control" name="DurationANDActivityCategoryTemplates5[activity_category][]">
+                                                                                        <option value="">Select Category</option>
+                                                                                        <option value="1">Free Play</option>
+                                                                                        <option value="2">Free Play</option>
+                                                                                        <option value="3">text</option>
+                                                                                        <option value="4">Free Play</option>
+                                                                                        <option value="5">Free Play</option>
+                                                                                        <option value="6">Free Play</option>
+                                                                                        <option value="7">Free Play</option>
+                                                                                        <option value="8">Free Play</option>
+                                                                                        <option value="9">Free Play</option>
+                                                                                        <option value="10">Free Play</option>
+                                                                                        <option value="11" selected>Free Play</option>
+                                                                                    </select>       
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important ;font-weight:bold" onclick="return doRemove(this, 5)">Remove</a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group form-md-line-input field-activityquestion-type required">
+                                                                                <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                                                <div class="col-md-3">
+                                                                                    <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates5[duration][]" value="50">                                                <div class="help-block"></div>
+                                                                                </div>
+                                                                                <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                                                <div class="col-md-3">
+                                                                                    <select type="raw" class="form-control" name="DurationANDActivityCategoryTemplates5[activity_category][]">
+                                                                                        <option value="">Select Category</option>
+                                                                                        <option value="1">Free Play</option>
+                                                                                        <option value="2">Free Play</option>
+                                                                                        <option value="3">text</option>
+                                                                                        <option value="4">Free Play</option>
+                                                                                        <option value="5">Free Play</option>
+                                                                                        <option value="6">Free Play</option>
+                                                                                        <option value="7">Free Play</option>
+                                                                                        <option value="8">Free Play</option>
+                                                                                        <option value="9">Free Play</option>
+                                                                                        <option value="10">Free Play</option>
+                                                                                        <option value="11" selected>Free Play</option>
+                                                                                    </select>       
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important ;font-weight:bold" onclick="return doRemove(this, 5)">Remove</a>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="pull-right">
+                                                                        <a href="javascript:;"class="btn btn-default btn-circle" onclick="return chk(5)" ><i class="fa fa-plus"></i>Add More</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane active" id="tab6">
+                                                                    <div class="form-group form-md-line-input field-cycletemplates-for_day-1 has-success">
+                                                                        <label for="" class="control-label col-md-3">Day Name</label> 
+                                                                        <div class="col-md-6">
+                                                                            <input type="text" id="day-templates6" class="form-control" name="DayTemplates6" value="Day-6">  
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group form-md-line-input field-cycletemplates-for_day-1 has-success">
+                                                                        <label for="" class="control-label col-md-3">Emphasis</label> 
+                                                                        <div class="col-md-6">
+                                                                            <input type="text" id="emphasis-templates6" class="form-control" name="EmphasisTemplates6" value="Time">  
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="cycle-template-category-show6">
+                                                                        <div id="cycle-template-category-hide6" >
+                                                                            <div class="form-group form-md-line-input field-activityquestion-type required">
+                                                                                <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                                                <div class="col-md-3">
+                                                                                    <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates6[duration][]" value="20">                                                <div class="help-block"></div>
+                                                                                </div>
+                                                                                <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                                                <div class="col-md-3">
+                                                                                    <select type="raw" class="form-control" name="DurationANDActivityCategoryTemplates6[activity_category][]">
+                                                                                        <option value="">Select Category</option>
+                                                                                        <option value="1">Free Play</option>
+                                                                                        <option value="2">Free Play</option>
+                                                                                        <option value="3">text</option>
+                                                                                        <option value="4">Free Play</option>
+                                                                                        <option value="5">Free Play</option>
+                                                                                        <option value="6">Free Play</option>
+                                                                                        <option value="7">Free Play</option>
+                                                                                        <option value="8">Free Play</option>
+                                                                                        <option value="9">Free Play</option>
+                                                                                        <option value="10" selected>Free Play</option>
+                                                                                        <option value="11">Free Play</option>
+                                                                                    </select>       
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important ;font-weight:bold" onclick="return doRemove(this, 6)">Remove</a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group form-md-line-input field-activityquestion-type required">
+                                                                                <label for="activityquestion-type" class="control-label col-md-3">Duration</label>
+                                                                                <div class="col-md-3">
+                                                                                    <input type="text" class="form-control" name="DurationANDActivityCategoryTemplates6[duration][]" value="12">                                                <div class="help-block"></div>
+                                                                                </div>
+                                                                                <!--<label for="activityquestion-type" class="control-label col-md-2">Activity Category</label>-->
+                                                                                <div class="col-md-3">
+                                                                                    <select type="raw" class="form-control" name="DurationANDActivityCategoryTemplates6[activity_category][]">
+                                                                                        <option value="">Select Category</option>
+                                                                                        <option value="1">Free Play</option>
+                                                                                        <option value="2">Free Play</option>
+                                                                                        <option value="3">text</option>
+                                                                                        <option value="4">Free Play</option>
+                                                                                        <option value="5">Free Play</option>
+                                                                                        <option value="6">Free Play</option>
+                                                                                        <option value="7">Free Play</option>
+                                                                                        <option value="8">Free Play</option>
+                                                                                        <option value="9">Free Play</option>
+                                                                                        <option value="10">Free Play</option>
+                                                                                        <option value="11" selected>Free Play</option>
+                                                                                    </select>       
+                                                                                    <div class="help-block"></div>
+                                                                                </div>
+                                                                                <div class="">
+                                                                                    <a href="javascript:;" class="btn btn-danger btn-sm" style="color:white !important ;font-weight:bold" onclick="return doRemove(this, 6)">Remove</a>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="pull-right">
+                                                                        <a href="javascript:;"class="btn btn-default btn-circle" onclick="return chk(6)" ><i class="fa fa-plus"></i>Add More</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix" style="margin-bottom:10px;"></div>
+                                                            <div class="form-actions" style="background-color: #f5f5f5;margin: 0;padding: 20px 10px;">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="form-actions">
+                                                                                <div class="row">
+                                                                                    <div class="col-md-offset-3 col-md-9">
+                                                                                        <a href="javascript:;" class="btn default button-previous">
+                                                                                            <i class="fa fa-angle-left"></i> Back </a>
+                                                                                        <a href="javascript:;" class="btn btn-outline green button-next" style="color:white !important"> Continue
+                                                                                            <i class="fa fa-angle-right"></i>
+                                                                                        </a>
+                                                                                        <input  type="submit" class="btn green button-submit" value="Submit" style="color:white !important">
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>    </div>
+                                        </div>
+
+                                        <script type="text/javascript">
+                                            $(document).ready(function () {
+                                                //            $('#cycle-template-category-hide1').clone().appendTo('#cycle-template-category-show1')
+                                                //            $('#cycle-template-category-hide1').clone().appendTo('#cycle-template-category-show1')
+                                                //            $('#cycle-template-category-hide1').clone().appendTo('#cycle-template-category-show1')
+                                                //            $('#cycle-template-category-hide1').clone().appendTo('#cycle-template-category-show1')
+                                                //            $('#cycle-template-category-hide1').clone().appendTo('#cycle-template-category-show1')
+                                                //            $('#cycle-template-category-hide1').clone().appendTo('#cycle-template-category-show1')
+                                                //            $('#cycle-template-category-hide1').clone().appendTo('#cycle-template-category-show1')
+                                                //            $('#cycle-template-category-hide1').clone().appendTo('#cycle-template-category-show1')
+                                                //            $('#cycle-template-category-hide1').clone().appendTo('#cycle-template-category-show1')
+                                                //            $('#cycle-template-category-hide1').clone().appendTo('#cycle-template-category-show1')
+                                                //            $('#cycle-template-category-hide2').clone().appendTo('#cycle-template-category-show2')
+                                                //            $('#cycle-template-category-hide2').clone().appendTo('#cycle-template-category-show2')
+                                                //            $('#cycle-template-category-hide2').clone().appendTo('#cycle-template-category-show2')
+                                                //            $('#cycle-template-category-hide2').clone().appendTo('#cycle-template-category-show2')
+                                                //            $('#cycle-template-category-hide2').clone().appendTo('#cycle-template-category-show2')
+                                                //            $('#cycle-template-category-hide2').clone().appendTo('#cycle-template-category-show2')
+                                                //            $('#cycle-template-category-hide2').clone().appendTo('#cycle-template-category-show2')
+                                                //            $('#cycle-template-category-hide2').clone().appendTo('#cycle-template-category-show2')
+                                                //            $('#cycle-template-category-hide2').clone().appendTo('#cycle-template-category-show2')
+                                                //            $('#cycle-template-category-hide2').clone().appendTo('#cycle-template-category-show2')
+                                                //            $('#cycle-template-category-hide3').clone().appendTo('#cycle-template-category-show3')
+                                                //            $('#cycle-template-category-hide3').clone().appendTo('#cycle-template-category-show3')
+                                                //            $('#cycle-template-category-hide3').clone().appendTo('#cycle-template-category-show3')
+                                                //            $('#cycle-template-category-hide3').clone().appendTo('#cycle-template-category-show3')
+                                                //            $('#cycle-template-category-hide3').clone().appendTo('#cycle-template-category-show3')
+                                                //            $('#cycle-template-category-hide3').clone().appendTo('#cycle-template-category-show3')
+                                                //            $('#cycle-template-category-hide3').clone().appendTo('#cycle-template-category-show3')
+                                                //            $('#cycle-template-category-hide3').clone().appendTo('#cycle-template-category-show3')
+                                                //            $('#cycle-template-category-hide3').clone().appendTo('#cycle-template-category-show3')
+                                                //            $('#cycle-template-category-hide3').clone().appendTo('#cycle-template-category-show3')
+                                                //            $('#cycle-template-category-hide4').clone().appendTo('#cycle-template-category-show4')
+                                                //            $('#cycle-template-category-hide4').clone().appendTo('#cycle-template-category-show4')
+                                                //            $('#cycle-template-category-hide4').clone().appendTo('#cycle-template-category-show4')
+                                                //            $('#cycle-template-category-hide4').clone().appendTo('#cycle-template-category-show4')
+                                                //            $('#cycle-template-category-hide4').clone().appendTo('#cycle-template-category-show4')
+                                                //            $('#cycle-template-category-hide4').clone().appendTo('#cycle-template-category-show4')
+                                                //            $('#cycle-template-category-hide4').clone().appendTo('#cycle-template-category-show4')
+                                                //            $('#cycle-template-category-hide4').clone().appendTo('#cycle-template-category-show4')
+                                                //            $('#cycle-template-category-hide4').clone().appendTo('#cycle-template-category-show4')
+                                                //            $('#cycle-template-category-hide4').clone().appendTo('#cycle-template-category-show4')
+                                                //            $('#cycle-template-category-hide5').clone().appendTo('#cycle-template-category-show5')
+                                                //            $('#cycle-template-category-hide5').clone().appendTo('#cycle-template-category-show5')
+                                                //            $('#cycle-template-category-hide5').clone().appendTo('#cycle-template-category-show5')
+                                                //            $('#cycle-template-category-hide5').clone().appendTo('#cycle-template-category-show5')
+                                                //            $('#cycle-template-category-hide5').clone().appendTo('#cycle-template-category-show5')
+                                                //            $('#cycle-template-category-hide5').clone().appendTo('#cycle-template-category-show5')
+                                                //            $('#cycle-template-category-hide5').clone().appendTo('#cycle-template-category-show5')
+                                                //            $('#cycle-template-category-hide5').clone().appendTo('#cycle-template-category-show5')
+                                                //            $('#cycle-template-category-hide5').clone().appendTo('#cycle-template-category-show5')
+                                                //            $('#cycle-template-category-hide5').clone().appendTo('#cycle-template-category-show5')
+                                                //            $('#cycle-template-category-hide6').clone().appendTo('#cycle-template-category-show6')
+                                                //            $('#cycle-template-category-hide6').clone().appendTo('#cycle-template-category-show6')
+                                                //            $('#cycle-template-category-hide6').clone().appendTo('#cycle-template-category-show6')
+                                                //            $('#cycle-template-category-hide6').clone().appendTo('#cycle-template-category-show6')
+                                                //            $('#cycle-template-category-hide6').clone().appendTo('#cycle-template-category-show6')
+                                                //            $('#cycle-template-category-hide6').clone().appendTo('#cycle-template-category-show6')
+                                                //            $('#cycle-template-category-hide6').clone().appendTo('#cycle-template-category-show6')
+                                                //            $('#cycle-template-category-hide6').clone().appendTo('#cycle-template-category-show6')
+                                                //            $('#cycle-template-category-hide6').clone().appendTo('#cycle-template-category-show6')
+                                                //            $('#cycle-template-category-hide6').clone().appendTo('#cycle-template-category-show6')
+
+                                            });
+                                            function chk(id) {
+                                                $('#cycle-template-category-hide' + id).clone().appendTo('#cycle-template-category-show' + id);
+                                                //        duration(id);
+                                                activityCategory(id);
+                                                day(id);
+                                                emphasis(id);
+                                            }
+
+                                            //    $("form").on("click", ".add_employer", function (e) {
+                                            //        e.preventDefault();
+                                            //        $('#cycle-template-category-hide').clone().appendTo('#cycle-template-category-show');
+                                            //        duration();
+                                            //        $('input[name="CycleTemplates[duration][1]"]').rules("add", {
+                                            //            required: true
+                                            //        });
+
+
+                                            //    ?  counter += 1;
+                                            //    });
+                                            function doRemove(arg, ids) {
+                                                c = confirm('Are you sure?');
+                                                if (c == true) {
+                                                    $(arg).parent().parent().parent().remove();
+                                                    duration(ids);
+                                                    activityCategory(ids);
+                                                    day(ids);
+                                                    emphasis(ids);
+                                                }
+                                            }
+                                            //    function duration(ids) {
+                                            //        for (i = 0; i <= document.cycle.elements.length - 1; i++) {
+                                            //            eleName = document.cycle.elements[i].name;
+                                            //            if (eleName.indexOf("DurationANDActivityCategoryTemplates" + ids) == 0) {
+                                            //                //Give a dynamic id
+                                            //                document.cycle.elements[i].id = 'duration-templates' + i;
+                                            //                document.cycle.elements[i].name = 'DurationANDActivityCategoryTemplates' + ids + '[duration][' + i + ']';
+                                            //                $('#' + document.cycle.elements[i].id).rules("add", {
+                                            //                    required: true,
+                                            //                    digits: true,
+                                            //                });
+                                            //            }
+                                            //        }
+                                            //    }
+
+                                            function day(ids) {
+                                                for (i = 0; i <= document.cycle.elements.length - 1; i++) {
+                                                    eleName = document.cycle.elements[i].name;
+                                                    if (eleName.indexOf("DayTemplates") == 0) {
+                                                        //Give a dynamic id
+                                                        document.cycle.elements[i].id = 'day-templates' + i;
+                                                        //                document.cycle.elements[i].name = 'DayTemplates' + i + '';
+                                                        $('#' + document.cycle.elements[i].id).rules("add", {
+                                                            required: true,
+                                                            //                    digits: true,
+                                                        });
+                                                    }
+                                                }
+                                            }
+
+                                            function emphasis(ids) {
+                                                for (i = 0; i <= document.cycle.elements.length - 1; i++) {
+                                                    eleName = document.cycle.elements[i].name;
+                                                    if (eleName.indexOf("EmphasisTemplates") == 0) {
+                                                        //Give a dynamic id
+                                                        document.cycle.elements[i].id = 'emphasis-templates' + i;
+                                                        //                document.cycle.elements[i].name = 'EmphasisTemplates' + i;
+                                                        $('#' + document.cycle.elements[i].id).rules("add", {
+                                                            required: true,
+                                                        });
+                                                    }
+                                                }
+                                            }
+
+                                            function activityCategory(ids) {
+                                                for (i = 0; i <= document.cycle.elements.length - 1; i++) {
+                                                    eleName = document.cycle.elements[i].name;
+                                                    if (eleName.indexOf("DurationANDActivityCategoryTemplates" + ids) == 0) {
+                                                        //Give a dynamic id
+                                                        document.cycle.elements[i].id = 'activity-category-templates' + i;
+                                                        if (i % 2 == 0) {
+                                                            document.cycle.elements[i].name = 'DurationANDActivityCategoryTemplates' + ids + '[activity_category][' + i + ']';
+                                                        } else {
+                                                            document.cycle.elements[i].name = 'DurationANDActivityCategoryTemplates' + ids + '[duration][' + i + ']';
+                                                        }
+                                                        $('#' + document.cycle.elements[i].id).rules("add", {
+                                                            required: true
+                                                        });
+                                                    }
+                                                }
+                                            }
+                                        </script>        </div>
+                                </div>
+                            </div>
+
+                        </div></div></div></div></div><!-- BEGIN FOOTER -->
+        <div class="page-footer">
+            <div class="page-footer-inner">
+                2015 &copy; SimbaCPM    </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!-- END FOOTER -->
+
+        <script type="text/javascript">
+
+        </script><div id="yii-debug-toolbar" data-url="/simba/backend/index.php?r=debug%2Fdefault%2Ftoolbar&amp;tag=569757bb0a3a0" style="display:none" class="yii-debug-toolbar-bottom"></div><script type="text/javascript" src="/simba/backend/assets/27e4e4f3/js/jquery.min.js" language="javascript"></script>
+        <script src="/simba/backend/assets/eda92ace/yii.js"></script>
+        <script src="/simba/backend/assets/eda92ace/yii.activeForm.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/e2891136/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/4c87f46a/js/bootstrap-hover-dropdown.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/f4a2fd9e/js/jquery.slimscroll.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/d838b1a3/js/jquery.blockui.min.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/4d00843b/js/jquery.uniform.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/6d639fc5/js/bootstrap-switch.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/aeb1f3c2/js/jquery.validate.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/aeb1f3c2/js/additional-methods.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/e3185ab9/js/bootstrap-select.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/e3185ab9/js/app.min.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/e3185ab9/js/components-bootstrap-select.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/e3185ab9/js/jquery.multi-select.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/e3185ab9/js/select2.full.min.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/e3185ab9/js/components-multi-select.min.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/cd2b9449/js/summernote.min.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/f112d0e3/js/ion.rangeSlider.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/f112d0e3/js/components-ion-sliders.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/ac111414/js/jquery.bootstrap.wizard.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/ac111414/js/form-wizard.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/ac111414/js/form-wizard-cycle.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/6f99067c/js/metronic.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/9cfa6093/js/layout.js"></script>
+        <script type="text/javascript" src="/simba/backend/assets/9cfa6093/js/demo.js"></script>
+        <script src="/simba/backend/assets/51aed39a/js/sidenav.js"></script>
+        <script src="/simba/backend/assets/6ea04b0/toolbar.js"></script>
+        <script type="text/javascript">jQuery(document).ready(function () {
+                Metronic.init();
+                Layout.init();
+                Demo.init();
+            });</script>
+        <script type="text/javascript">jQuery(document).ready(function () {
+                jQuery('#cycle').yiiActiveForm([], []);
+            });</script></body></html>

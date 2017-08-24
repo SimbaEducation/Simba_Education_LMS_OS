@@ -1,0 +1,193 @@
+<?php
+/**
+ *  Settins
+ */
+namespace backend\controllers;
+
+use Yii;
+use backend\models\Settings;
+use backend\models\SettingsSearch;
+use backend\components\BackEndController;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+use yii\base\DynamicModel;
+use yii\web\UploadedFile;
+
+/**
+ * SettingsController implements the CRUD actions for Settings model.
+ */
+class SettingsController extends BackEndController {
+
+    public $layout = 'material_main';
+
+    public function behaviors() {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'update', 'create', 'index2'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+//            'verbs' => [
+//                'class' => VerbFilter::className(),
+//                'actions' => [
+//                    'delete' => ['post'],
+//                ],
+//            ],
+        ];
+    }
+
+    /**
+     * List of Settings
+     * @return 
+     */
+    public function actionIndex() {
+        $pageSize = isset($_GET['per-page']) ? $_GET['per-page'] : 5;
+        $this->pageHeading = 'Settings';
+        $this->pageDescription = 'Manager';
+
+        $searchModel = new SettingsSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $pageSize);
+
+        return $this->render('index', array('dataProvider' => $dataProvider, 'searchModel' => $searchModel, 'pageSize' => $pageSize));
+    }
+
+    /**
+     * Displays a single Settings model.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionView($id) {
+        return $this->render('view', [
+                    'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new Settings model.
+     * If creation is successful, the browser will be redirected to the 'Index' page.
+     * @return mixed
+     */
+    public function actionCreate() {
+        $model = new Settings();
+        $load = $model->load(Yii::$app->request->post());
+        if ($load && $model->validate(['settingName', 'type'])) {
+            if ($model->type == '2') {
+                $model->scenario = 'image';
+                $model->image = UploadedFile::getInstance($model, 'image');
+                if ($model->validate(['image'])) {
+                    $model->image->saveAs(\Yii::$app->basePath . '/../uploads/settings/' . $model->image->baseName . '.' . $model->image->extension);
+                    $model->settingValue = $model->image->baseName . '.' . $model->image->extension;
+                    if ($model->save(false))
+                        return $this->redirect(['index']);
+                }
+                return $this->render('create', ['model' => $model]);
+            } else if ($model->type == '3') {
+                $model->scenario = 'valueText';
+                if ($model->validate(['settingValue'])) {
+                    $model->settingValue = $_POST['Settings']['settingValueText'];
+                    if ($model->save(false))
+                        return $this->redirect(['index']);
+                }
+            } else {
+                $model->scenario = 'value';
+                if ($model->validate(['settingValue'])) {
+                    if ($model->save(false))
+                        return $this->redirect(['index']);
+                }
+                else {
+                    return $this->render('create', [
+                                'model' => $model,
+                    ]);
+                }
+            }
+        }
+        return $this->render('create', [
+                    'model' => $model,
+        ]);
+    }
+
+    /**
+     * Updates an existing Settings model.
+     * If update is successful, the browser will be redirected to the 'Index' page.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionUpdate($id) {
+
+        $model = $this->findModel($id);
+        $model->settingValueText = $model->settingValue;
+        $load = $model->load(Yii::$app->request->post());
+
+        if ($load) {
+            if ($model->type == '2') {
+
+                if (isset($_FILES['Settings']['name']['image']) && !empty($_FILES['Settings']['name']['image'])) {
+                    $model->scenario = 'image';
+                    $model->image = UploadedFile::getInstance($model, 'image');
+                    if ($model->validate(['image'])) {
+                        $model->image->saveAs(\Yii::$app->basePath . '/../uploads/settings/' . $model->image->baseName . '.' . $model->image->extension);
+                        $model->settingValue = $model->image->baseName . '.' . $model->image->extension;
+                        if ($model->save(false))
+                            return $this->redirect(['index']);
+                    }
+                }else {
+                    return $this->redirect(['index']);
+                }
+                return $this->render('update', ['model' => $model]);
+            } else if ($model->type == '3') {
+                $model->scenario = 'valueText';
+                if ($model->validate(['settingValue'])) {
+                    $model->settingValue = $_POST['Settings']['settingValueText'];
+                    if ($model->save(false))
+                        return $this->redirect(['index']);
+                }
+            } else {
+                $model->scenario = 'value';
+                if ($model->validate(['settingValue'])) {
+                    $model->settingValue = $_POST['Settings']['settingValue'];
+                    if ($model->save(false)) {
+                        
+                    }
+                    return $this->redirect(['index']);
+                } else {
+                    return $this->render('update', [
+                                'model' => $model,
+                    ]);
+                }
+            }
+        }
+        return $this->render('update', [
+                    'model' => $model,
+        ]);
+    }
+
+    /**
+     * Finds the Settings model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param string $id
+     * @return Settings the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id) {
+        if (($model = Settings::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    private function findAllData() {
+        if (($model = Settings::find()->all()) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+}

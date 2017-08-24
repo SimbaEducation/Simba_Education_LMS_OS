@@ -1,0 +1,201 @@
+<?php
+/**
+ *  Activites Question
+ */
+namespace backend\controllers;
+
+use Yii;
+use backend\models\ActivityQuestion;
+use backend\models\ActivityQuestionSearch;
+use backend\components\BackEndController;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+use yii\base\DynamicModel;
+use yii\web\UploadedFile;
+
+/**
+ * ActivityQuestionController implements the CRUD actions for ActivityQuestion model.
+ */
+class ActivityQuestionController extends BackEndController {
+
+    public $pageHeading = 'Activity Questions';
+    public $layout = 'material_main';
+
+    public function behaviors() {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['post'],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * Lists all ActivityQuestion models.
+     * @return mixed
+     */
+    public function actionIndex() {
+        $pageSize = isset($_GET['per-page']) ? $_GET['per-page'] : 5;
+        $searchModel = new ActivityQuestionSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $pageSize);
+
+        return $this->render('index', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                    'pageSize' => $pageSize
+        ]);
+    }
+
+    /**
+     * Displays a single ActivityQuestion model.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionView($id) {
+        return $this->render('view', [
+                    'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new ActivityQuestion model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate() {
+        $model = new ActivityQuestion();
+        $load = $model->load(Yii::$app->request->post());
+        if ($load && $model->validate(['question', 'type', 'lo_id'])) {
+            if ($model->type == 1) {
+//                $model->scenario = 'imageVal';
+                $model->image_1 = UploadedFile::getInstance($model, 'image_1');
+                $model->image_2 = UploadedFile::getInstance($model, 'image_2');
+                $model->image_3 = UploadedFile::getInstance($model, 'image_3');
+                $model->image_4 = UploadedFile::getInstance($model, 'image_4');
+                if ($model->validate(['point_1', 'point_2', 'point_3', 'point_4', 'image_1', 'image_2', 'image_3', 'image_4'])) {
+
+                    $unique = $model->image_1->baseName . '-' . uniqid() . '.' . $model->image_1->extension;
+                    $model->image_1->saveAs(\Yii::$app->basePath . '/../uploads/question/' . $unique);
+                    $model->outcome_1 = $unique;
+
+                    $unique = $model->image_2->baseName . '-' . uniqid() . '.' . $model->image_2->extension;
+                    $model->image_2->saveAs(\Yii::$app->basePath . '/../uploads/question/' . $unique);
+                    $model->outcome_2 = $unique;
+
+                    $unique = $model->image_3->baseName . '-' . uniqid() . '.' . $model->image_3->extension;
+                    $model->image_3->saveAs(\Yii::$app->basePath . '/../uploads/question/' . $unique);
+                    $model->outcome_3 = $unique;
+
+                    $unique = $model->image_4->baseName . '-' . uniqid() . '.' . $model->image_4->extension;
+                    $model->image_4->saveAs(\Yii::$app->basePath . '/../uploads/question/' . $unique);
+                    $model->outcome_4 = $unique;
+
+                    if ($model->save(false))
+                        return $this->redirect(['index']);
+                }
+            } else {
+//                $model->scenario = 'textValue';
+                if ($model->validate(['point_1', 'point_2', 'point_3', 'point_4', 'outcome_1', 'outcome_2', 'outcome_3', 'outcome_4'])) {
+
+                    if ($model->save(false))
+                        return $this->redirect(['index']);
+                }
+            }
+        }
+        return $this->render('create', [
+                    'model' => $model,
+        ]);
+    }
+
+    /**
+     * Updates an existing ActivityQuestion model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionUpdate($id) {
+        $model = $this->findModel($id);
+
+        $load = $model->load(Yii::$app->request->post());
+        if ($load && $model->validate(['question', 'type', 'lo_id'])) {
+            if ($model->type == 1) {
+                if (isset($_FILES['ActivityQuestion']['name']['image_1']) && !empty($_FILES['ActivityQuestion']['name']['image_1'])) {
+                    $model->image_1 = UploadedFile::getInstance($model, 'image_1');
+                    if ($model->validate(['image_1', 'point_1'])) {
+                        $unique = $model->image_1->baseName . '-' . uniqid() . '.' . $model->image_1->extension;
+                        $model->image_1->saveAs(\Yii::$app->basePath . '/../uploads/question/' . $unique);
+                        $model->outcome_1 = $unique;
+                    }
+                }
+                if (isset($_FILES['ActivityQuestion']['name']['image_2']) && !empty($_FILES['ActivityQuestion']['name']['image_2'])) {
+                    $model->image_2 = UploadedFile::getInstance($model, 'image_2');
+                    if ($model->validate(['image_2', 'point_2'])) {
+                        $unique = $model->image_2->baseName . '-' . uniqid() . '.' . $model->image_2->extension;
+                        $model->image_2->saveAs(\Yii::$app->basePath . '/../uploads/question/' . $unique);
+                        $model->outcome_2 = $unique;
+                    }
+                }
+                if (isset($_FILES['ActivityQuestion']['name']['image_3']) && !empty($_FILES['ActivityQuestion']['name']['image_3'])) {
+                    $model->image_3 = UploadedFile::getInstance($model, 'image_3');
+                    if ($model->validate(['image_3', 'point_3'])) {
+                        $unique = $model->image_3->baseName . '-' . uniqid() . '.' . $model->image_3->extension;
+                        $model->image_3->saveAs(\Yii::$app->basePath . '/../uploads/question/' . $unique);
+                        $model->outcome_3 = $unique;
+                    }
+                }
+                if (isset($_FILES['ActivityQuestion']['name']['image_4']) && !empty($_FILES['ActivityQuestion']['name']['image_4'])) {
+                    $model->image_4 = UploadedFile::getInstance($model, 'image_4');
+                    if ($model->validate(['image_4', 'point_4'])) {
+                        $unique = $model->image_4->baseName . '-' . uniqid() . '.' . $model->image_4->extension;
+                        $model->image_4->saveAs(\Yii::$app->basePath . '/../uploads/question/' . $unique);
+                        $model->outcome_4 = $unique;
+                    }
+                }
+                if ($model->save(false))
+                    return $this->redirect(['index']);
+            } else {
+//                $model->scenario = 'textValue';
+                if ($model->validate(['point_1', 'point_2', 'point_3', 'point_4', 'outcome_1', 'outcome_2', 'outcome_3', 'outcome_4'])) {
+
+                    if ($model->save(false))
+                        return $this->redirect(['index']);
+                }
+            }
+        }
+        return $this->render('update', [
+                    'model' => $model,
+        ]);
+    }
+
+    /**
+     * Deletes an existing ActivityQuestion model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionDelete($id) {
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['index']);
+    }
+
+    /**
+     * Finds the ActivityQuestion model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param string $id
+     * @return ActivityQuestion the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id) {
+        if (($model = ActivityQuestion::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+}
+

@@ -1,0 +1,120 @@
+<?php
+/**
+ *  Type of cycle
+ */
+namespace backend\controllers;
+
+use Yii;
+use backend\models\TypesOfCycles;
+use backend\models\TypesOfCyclesSearch;
+use backend\components\BackEndController;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+
+/**
+ * TypesOfCyclesController implements the CRUD actions for TypesOfCycles model.
+ */
+class TypesOfCyclesController extends BackEndController {
+
+    public $pageHeading = 'Types of Cycles';
+    public $layout = 'material_main';
+
+    public function behaviors() {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+//                    'delete' => ['post'],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * Lists all TypesOfCycles models.
+     * @return mixed
+     */
+    public function actionIndex() {
+        $searchTypesOfCycles = new TypesOfCyclesSearch();
+        $dataProvidersearchTypesOfCycles = $searchTypesOfCycles->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+                    'searchTypesOfCycles' => $searchTypesOfCycles,
+                    'dataProvidersearchTypesOfCycles' => $dataProvidersearchTypesOfCycles]);
+    }
+
+    /**
+     * Displays a single TypesOfCycles model.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionView($id) {
+        return $this->render('view', [
+                    'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new TypesOfCycles model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate() {
+        $model = new TypesOfCycles();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                        'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Updates an existing TypesOfCycles model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionUpdate($id) {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                        'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Deletes an existing TypesOfCycles model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param string $id
+     * @return mixed
+     */
+    public function actionDelete($id) {
+       $check = $_GET['check'];
+        $this->findModel($id)->delete();
+
+         return $this->redirect(['preferences/index', 'check' => 2]);
+    }
+
+    /**
+     * Finds the TypesOfCycles model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param string $id
+     * @return TypesOfCycles the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id) {
+        if (($model = TypesOfCycles::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+}

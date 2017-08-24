@@ -1,0 +1,73 @@
+<?php
+/**
+ * Summary Text
+ */
+namespace backend\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "cycle_template_days".
+ *
+ * @property string $id
+ * @property string $name
+ * @property string $cycle_template_id
+ * @property string $emphasis
+ * @property integer $position
+ *
+ * @property CycleTemplates $cycleTemplate
+ * @property CycleTemplateDaysCategories[] $cycleTemplateDaysCategories
+ */
+class CycleTemplateDays extends \yii\db\ActiveRecord
+{
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'cycle_template_days';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['name', 'emphasis', 'position'], 'required'],
+            [['cycle_template_id', 'position'], 'integer'],
+            [['name'], 'string', 'max' => 64],
+            [['emphasis'], 'string', 'max' => 128]
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'name' => 'Name',
+            'cycle_template_id' => 'Cycle Template ID',
+            'emphasis' => 'Emphasis',
+            'position' => 'Position',
+        ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCycleTemplate()
+    {
+        return $this->hasOne(CycleTemplates::className(), ['id' => 'cycle_template_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCycleTemplateDaysCategories()
+    {
+        return $this->hasMany(CycleTemplateDaysCategories::className(), ['cycle_template_days_id' => 'id']);
+    }
+}

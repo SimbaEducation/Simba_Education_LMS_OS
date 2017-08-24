@@ -1,0 +1,143 @@
+<?php
+/**
+ * Summary Text
+ */
+namespace backend\models;
+
+use Yii;
+use yii\db\ActiveRecord;
+use yii\web\UploadedFile;
+use common\components\ImageBehavior;
+use common\components\ImageComponent;
+
+/**
+ * This is the base model class for table "settings".
+ *
+ * @property string $id
+ * @property string $module
+ * @property string $settingName
+ * @property string $settingValue
+ */
+class Settings extends ActiveRecord {
+
+    const DEFAULT_PAGE_SIZE = 15;
+    const DEFAULT_CURRENCY_SYMBOL = '$';
+    const MODULE_GENERAL = 'general';
+    const MODULE_SMTP = 'smtp';
+    const MODULE_EMAIL = 'emailTemplate';
+
+    public $image;
+    public $settingValueText;
+
+    /**
+     * @inheritdoc
+     */
+    public static function tableName() {
+        return 'settings';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules() {
+        return [
+            [['settingName', 'type'], 'required'],
+            [['settingValue'], 'required', 'on' => 'update'],
+            [['settingValue'], 'required', 'on' => 'value'],
+            [['settingValueText'], 'required', 'on' => 'valueTextUpdate'],
+            [['settingValueText'], 'required', 'on' => 'valueText'],
+            [['image'], 'required', 'on' => 'image'],
+            [['settingValue'], 'string'],
+            [['image'], 'safe'],
+            [['image'], 'file', 'extensions' => 'jpg, png'],
+            [['module', 'settingName'], 'string', 'max' => 255]
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels() {
+        return [
+            'id' => 'ID',
+            'settingName' => 'Setting Name',
+            'settingValue' => 'Setting Value',
+            'image' => 'Upload Image',
+        ];
+    }
+
+    /**
+     * Set Scenarios
+     * @return string
+     */
+    public function scenarios() {
+        $scenarios = parent::scenarios();
+        $scenarios['update'] = ['settingValue', 'image']; //Scenario Values Only Accepted
+        return $scenarios;
+    }
+
+    /**
+     * Set Array
+     * 
+     */
+    public function behaviors() {
+        return [
+            [
+                'class' => ImageBehavior::className(),
+                'attribute' => 'image',
+                'saveAttribute' => 'settingValue',
+                'path' => 'uploads/settings',
+            ]
+        ];
+    }
+
+    /**
+     * Set Value  
+     * @param type $moduleName
+     * @param type $settingName
+     * @param type $defaultValue
+     * @return type
+     */
+    public static function getSettingValue($moduleName, $settingName, $defaultValue = null) {
+        $model = self::find()
+                ->where(['settingName' => $settingName])
+                ->one();
+
+        if (isset($model))
+            return $model->settingValue;
+        else
+            return $defaultValue;
+    }
+
+    /**
+     * Setting Image Location 
+     * @return string
+     */
+    public static function getSettingsPath() {
+
+        return '@uploads/settings/';
+    }
+
+    /**
+     * Image Path
+     * @param type $fileName
+     */
+    public static function buildImagePath($fileName) {
+        return self::getSettingsPath() . $fileName;
+    }
+
+    /**
+     * Logo of Site
+     * @return Image Link
+     */
+    public static function getSiteLogo() {
+        $fileName = self::getSettingValue(self::MODULE_GENERAL, 'headerLogo');
+
+        if (isset($fileName))
+            return self::buildImagePath($fileName);
+        else
+            return ImageComponent::getDefaultSiteLogo();
+    }
+
+}
+

@@ -1,0 +1,107 @@
+<?php
+/**
+ * Summary Text
+ */
+namespace backend\models;
+
+use Yii;
+use yii\helpers\Html;
+
+/**
+ * This is the base model class for table "tbl_user_type".
+ *
+ * @property integer $id
+ * @property string $type
+ * @property string $label
+ * @property integer $active
+ * @property integer $added_at
+ * @property integer $updated_at
+ */
+class UserType extends \yii\db\ActiveRecord{
+
+    const TYPE_ADMIN = 'admin';
+    const TYPE_SUB_ADMIN = 'sub-admin';
+    const TYPE_CLIENT_USERS = 'client-users';
+
+    /**
+     * @inheritdoc
+     */
+    public static function tableName() {
+        return 'user_type';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules() {
+        return [
+            [['type', 'label','added_at', 'updated_at'], 'required'],
+            [['status', 'added_at', 'updated_at'], 'integer'],
+            [['type', 'label'], 'string', 'max' => 255],
+            [['type'], 'unique'],
+            [['type', 'label'], 'safe'],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels() {
+        return [
+            'id' => Yii::t('app', 'ID'),
+            'type' => Yii::t('app', 'Type'),
+            'label' => Yii::t('app', 'Label'),
+            'status' => Yii::t('app', 'Status'),
+            'added_at' => Yii::t('app', 'Added At'),
+            'updated_at' => Yii::t('app', 'Updated At'),
+        ];
+    }
+
+    public function getUsers() {
+        return $this->hasMany(User::className(), ['user_type_id' => 'id']);
+    }
+
+    public function getTypeHtml() {
+        $html = '';
+
+        switch ($this->type) {
+            case self::TYPE_ADMIN: {
+                    $html = Html::tag('span', $this->label, ['class' => 'label label-sm label-primary ']);
+                    break;
+                }
+            case self::TYPE_SUB_ADMIN: {
+                    $html = Html::tag('span', $this->label, ['class' => 'label label-sm label-info']);
+                    break;
+                }
+            case self::TYPE_CLIENT_USERS: {
+                    $html = Html::tag('span', $this->label, ['class' => 'label label-sm label-success']);
+                    break;
+                }
+            default: {
+                    $html = Html::tag('span', $this->label, ['class' => 'label label-sm label-default']);
+                    break;
+                }
+        }
+
+        return $html;
+    }
+
+    public function getUserTypeHtml() {
+        $html = Html::tag('span', $this->label, ['class' => 'label label-sm label-success']);
+        return $html;
+    }
+
+    public function getUserTypeStatusHtml() {
+        $className = $label = '';
+        if ($this->status == 1) {
+            $className = 'label label-sm label-success';
+            $label = 'Active';
+        } else {
+            $className = 'label label-sm label-danger';
+            $label = 'Not Active';
+        }
+        $html = Html::tag('span', $label, ['class' => $className]);
+        return $html;
+    }
+
+}
